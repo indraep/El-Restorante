@@ -29,9 +29,13 @@ root {
 
 #daftar {
     background-color: white;
-    padding: 0;
+    margin-top: -280;
 }
 
 #order:hover {
     opacity: 0.7;
+}
+
+#menu {
+    float: right;
 }
