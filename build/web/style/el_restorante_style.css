@@ -26,3 +26,9 @@ root {
     background-image: url(../assets/header.png);
     height: 90px;
 }
+
+#daftar {
+    background-color: white;
+    margin: 0 auto;
+    height: 160px;
+}
