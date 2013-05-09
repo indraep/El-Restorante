@@ -1,3 +1,5 @@
+INSERT INTO `category`(`id`, `name`) VALUES (1,'Goreng');
+INSERT INTO `category`(`id`, `name`) VALUES (2,'Bakar');
 INSERT INTO `category`(`id`, `name`) VALUES (3,'Rebus');
 INSERT INTO `category`(`id`, `name`) VALUES (4,'Kukus');
 INSERT INTO `category`(`id`, `name`) VALUES (5,'Makanan Ringan');
