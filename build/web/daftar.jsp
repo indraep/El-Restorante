@@ -24,7 +24,7 @@
                     out.print("<br>");
                     out.println("Harga: 10000");
                     out.print("<br>");
-                    out.println("TOMBOL PESAN");
+                    out.println("<img src='assets/order.png' id = 'order'>");
                     out.print("</td>");
                 }
             }
