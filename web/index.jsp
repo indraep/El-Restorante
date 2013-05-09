@@ -25,7 +25,9 @@
                 <td width="20%">
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
-                <td></td>
+                <td>
+                    <jsp:include page = 'daftar.jsp' flush = 'true' />
+                </td>
             </tr>
         </table>
     </body>
