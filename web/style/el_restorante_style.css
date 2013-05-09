@@ -29,6 +29,11 @@ root {
 
 #daftar {
     background-color: white;
-    margin: 0 auto;
+    margin-top: -50%;
+    padding: 0;
     height: 160px;
+}
+
+#nama {
+    margin-top: -40%;
 }

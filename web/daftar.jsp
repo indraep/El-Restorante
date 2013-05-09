@@ -7,12 +7,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ModelClass.CategoryModel"%>
 
-<div id = "daftar">
-    <%
-        CategoryModel categoryModel = new CategoryModel();
-        ArrayList<String> category = categoryModel.getCategory();
-    %>
-    
+<div id = "daftar">   
     <h4>Daftar Menu</h4>
     <table>
         <%
@@ -20,7 +15,10 @@
                 out.print("<tr>");
                 for (int j = 0; j < 3; ++j) {
                     out.print("<td>");
-                    out.print("OKKKKK");
+                    out.print("<img src='assets/AyamGoreng.jpg' height='150' width='150'>");
+                    out.print("<div id = 'nama'>");
+                    out.print("AAS)");
+                    out.print("</div>");
                     out.print("</td>");
                 }
                 out.print("</tr>");
