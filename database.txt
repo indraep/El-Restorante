@@ -1,0 +1,17 @@
+INSERT INTO `category`(`id`, `name`) VALUES (3,'Rebus');
+INSERT INTO `category`(`id`, `name`) VALUES (4,'Kukus');
+INSERT INTO `category`(`id`, `name`) VALUES (5,'Makanan Ringan');
+INSERT INTO `category`(`id`, `name`) VALUES (6,'Pembasuh Mulut');
+INSERT INTO `category`(`id`, `name`) VALUES (7,'Buah');
+INSERT INTO `category`(`id`, `name`) VALUES (8,'Minuman');
+
+
+INSERT INTO `menu`(`id`, `name`, `description`, `price`) VALUES (1,'Nasi Goreng','Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak goreng atau margarin, biasanya ditambah kecap manis, bawang merah, bawang putih, asam jawa, lada dan bumbu-bumbu lainnya, seperti telur, ayam, dan kerupuk.',10000)
+
+INSERT INTO `menu`(`id`, `name`, `description`, `price`) VALUES (2,'Sop Iga','Sop Iga Sapi atau rib adalah sop yang terbuat dari  bagian daging sapi yang berasal dari daging di sekitar tulang iga atau tulang rusuk. Bagian ini termasuk dari delapan bagian utama daging sapi yang biasa dikonsumsi. ',20000)
+
+INSERT INTO `menu`(`id`, `name`, `description`, `price`) VALUES (3,'Mie Jawa','Mi Jawa adalah bakmi rebus (bahasa Jawa: bakmi godhog) yang dimasak dengan bumbu khas masakan Jawa.',17000)
+
+INSERT INTO `menu`(`id`, `name`, `description`, `price`) VALUES (4,'Jus Mangga','Mangga yang diblender.',5000)
+
+INSERT INTO `menu`(`id`, `name`, `description`, `price`) VALUES (5,'Bolu Kukus','Bolu atau kue bolu (bahasa Inggris: cake) adalah kue berbahan dasar tepung (umumnya tepung terigu), gula, dan telur. Kue bolu dan cake umumnya dimatangkan dengan cara dipanggang di dalam oven, walaupun ada juga bolu yang dikukus',12000)

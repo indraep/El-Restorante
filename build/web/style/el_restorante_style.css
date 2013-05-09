@@ -1,0 +1,28 @@
+/* 
+    Document   : el_restorante_style
+    Created on : May 4, 2013, 9:38:05 AM
+    Author     : indraep
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#mainTable {
+    background-color: blue;
+    width: 77%;
+    margin: 0 auto;
+}
+
+#sidebar {
+    background-image: url(../assets/left_sidebar.png);
+    width: 100%;
+    height: 800px;
+}
+
+#banner {
+    background-image: url(../assets/header.png);
+    height: 90px;
+}
