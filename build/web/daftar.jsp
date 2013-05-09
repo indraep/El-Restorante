@@ -8,21 +8,28 @@
 <%@page import="ModelClass.CategoryModel"%>
 
 <div id = "daftar">   
-    <h4>Daftar Menu</h4>
-    <table>
-        <%
-            for (int i = 0; i < 3; ++i) {
-                out.print("<tr>");
-                for (int j = 0; j < 3; ++j) {
+    <h3>Daftar Menu</h3>
+    <%
+        out.print("<table>");
+        for (int i = 0; i < 3; ++i) {
+            out.print("<tr style='padding: 300'>");
+            for (int j = 0; j < 6; ++j) {
+                if (j % 2 == 0) {
                     out.print("<td>");
                     out.print("<img src='assets/AyamGoreng.jpg' height='150' width='150'>");
-                    out.print("<div id = 'nama'>");
-                    out.print("AAS)");
-                    out.print("</div>");
+                    out.print("</td>");
+                } else {
+                    out.print("<td>");
+                    out.println("Nama: Ayam bakar");
+                    out.print("<br>");
+                    out.println("Harga: 10000");
+                    out.print("<br>");
+                    out.println("TOMBOL PESAN");
                     out.print("</td>");
                 }
-                out.print("</tr>");
             }
-        %>
-    </table>
+            out.print("</tr>");
+        }
+        out.print("</table>");
+    %>
 </div>
