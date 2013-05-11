@@ -36,6 +36,10 @@ root {
     opacity: 0.7;
 }
 
+#list_category {
+    list-style-type: none;
+}
+
 #menu {
     float: right;
 }

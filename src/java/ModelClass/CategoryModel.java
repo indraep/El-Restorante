@@ -1,5 +1,10 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ModelClass;
 
+import Bean.Category;
 import Bean.Menu;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,10 +13,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author indraep
@@ -20,32 +21,39 @@ public class CategoryModel {
 
     private Statement statement;
     
-    public ArrayList<Menu> getMenuByCategory(int categoryId) throws Exception {
+    public ArrayList<Menu> getMenuByCategory(int catId) throws Exception  {
         connectToDB();
         
-        String query = "select * from menu where category_id = '" + categoryId + "'";
+        String query = "select * from menu where category_id = '" + catId + "'";
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
         ArrayList<Menu> ret = new ArrayList<Menu>();
         
         while (resultSet.next()) {
-            ret.add(new Menu(Integer.parseInt((String)resultSet.getObject(1)), Integer.parseInt((String)resultSet.getObject(2)), 
-                    (String)resultSet.getObject(3), (String)resultSet.getObject(4), Integer.parseInt((String)resultSet.getObject(5))));
+            int id = Integer.parseInt(resultSet.getObject(1).toString());
+            int categoryId = Integer.parseInt(resultSet.getObject(2).toString());
+            String name = resultSet.getObject(3).toString();
+            String description = resultSet.getObject(4).toString();
+            int price = Integer.parseInt(resultSet.getObject(5).toString());
+            
+            ret.add(new Menu(id, categoryId, name, description, price));
         }
-        
+            
         return ret;
     }
 
-    public ArrayList<String> getCategory() throws Exception {
+    public ArrayList<Category> getCategory() throws Exception {
         connectToDB();
 
-        String query = "select name from category";
+        String query = "select * from category";
         
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
-        ArrayList<String> ret = new ArrayList<String>();
+        ArrayList<Category> ret = new ArrayList<Category>();
         while (resultSet.next()) {
-            ret.add((String)resultSet.getObject(1) + "<br />");
+            int id = Integer.parseInt(resultSet.getObject(1).toString());
+            String name = resultSet.getObject(2).toString();
+            ret.add(new Category(id, name));
         }
         
         return ret;
