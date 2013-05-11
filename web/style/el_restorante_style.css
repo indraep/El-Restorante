@@ -14,6 +14,7 @@ root {
     background-color: blue;
     width: 77%;
     margin: 0 auto;
+    padding: 0;
 }
 
 #sidebar {
@@ -28,8 +29,8 @@ root {
 }
 
 #daftar {
-    background-color: white;
-    margin-top: -280;
+    height: 800px;
+    background-color: red;
 }
 
 #order:hover {

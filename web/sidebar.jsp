@@ -17,8 +17,12 @@
     <h4>Category</h4>
     <ul id="list_category">
         <%
-            for (int i = 0; i < category.size(); i++) {
-                out.print("<li>" + category.get(i).getName()+ "</li>");
+            for (int i = 0; i < category.size(); i++) { 
+        %>
+                <li>
+                    <a href="<%= "index.jsp?categoryId="+category.get(i).getId() %>"><%= category.get(i).getName() %></a>
+                </li>
+        <%
             }
         %>
     </ul>

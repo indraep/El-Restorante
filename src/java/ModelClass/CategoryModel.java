@@ -21,6 +21,21 @@ public class CategoryModel {
 
     private Statement statement;
     
+    public String getCategoryName(int id) throws Exception {
+        connectToDB();
+        
+        String query = "select name from category where id = '" + id + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        
+        String ret = "";
+        while (resultSet.next()) {
+            ret = resultSet.getObject(1).toString();
+        }
+        
+        return ret;
+    }
+    
     public ArrayList<Menu> getMenuByCategory(int catId) throws Exception  {
         connectToDB();
         

@@ -7,8 +7,14 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ModelClass.CategoryModel"%>
 
-<div id = "daftar">   
-    <h3>Daftar Menu</h3>
+<div id = "daftar">
+    
+    <%
+        String catId = request.getParameter("categoryId");
+        int categoryId = catId == null ? 1 : Integer.parseInt(catId);
+    %>
+    
+    <h3>Daftar Menu <%= new CategoryModel().getCategoryName(categoryId) %> </h3>
     <%
         out.print("<table>");
         for (int i = 0; i < 3; ++i) {
