@@ -1,5 +1,6 @@
 package ModelClass;
 
+import Bean.Menu;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,6 +19,22 @@ import java.util.ArrayList;
 public class CategoryModel {
 
     private Statement statement;
+    
+    public ArrayList<Menu> getMenuByCategory(int categoryId) throws Exception {
+        connectToDB();
+        
+        String query = "select * from menu where category_id = '" + categoryId + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        ArrayList<Menu> ret = new ArrayList<Menu>();
+        
+        while (resultSet.next()) {
+            ret.add(new Menu(Integer.parseInt((String)resultSet.getObject(1)), Integer.parseInt((String)resultSet.getObject(2)), 
+                    (String)resultSet.getObject(3), (String)resultSet.getObject(4), Integer.parseInt((String)resultSet.getObject(5))));
+        }
+        
+        return ret;
+    }
 
     public ArrayList<String> getCategory() throws Exception {
         connectToDB();

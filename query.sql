@@ -42,9 +42,11 @@ create table category (
 
 create table menu (
 	id int auto_increment primary key,
+	category_id int not null,
 	name text not null,
 	description text not null,
-	price int not null
+	price int not null,
+	foreign key (category_id) references category (category_id)
 );
 
 
