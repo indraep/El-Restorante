@@ -1,3 +1,5 @@
+% Nama database : el restorante
+
 create table user (
 	nama varchar(50) not null,
 	username varchar(50) primary key,
