@@ -36,10 +36,13 @@ public class CategoryModel {
         return ret;
     }
     
-    public ArrayList<Menu> getMenuByCategory(int catId) throws Exception  {
+    public ArrayList<Menu> getMenuByCategory(int catId, int page) throws Exception  {
         connectToDB();
         
-        String query = "select * from menu where category_id = '" + catId + "'";
+        int limit = 9;
+        int offset = limit * (page - 1);
+        
+        String query = "select * from menu where category_id = '" + catId + "' limit " + (limit + 1) + " offset " + offset ;
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
         ArrayList<Menu> ret = new ArrayList<Menu>();

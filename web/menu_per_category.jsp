@@ -14,7 +14,11 @@
         CategoryModel categoryModel = new CategoryModel();
         String catId = request.getParameter("categoryId");
         int categoryId = catId == null ? 1 : Integer.parseInt(catId);
-        ArrayList<Menu> menu = categoryModel.getMenuByCategory(categoryId);
+        
+        String spage = request.getParameter("page");
+        int npage = spage == null ? 1 : Integer.parseInt(spage);
+        
+        ArrayList<Menu> menu = categoryModel.getMenuByCategory(categoryId, npage);
         String link = "";
     %>
     
@@ -36,5 +40,11 @@
             out.print("</tr>");
         }
         out.print("</table>");
+        if (npage > 1) {
+            out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage-1) + "'>back</a>");
+        }
+        if (menu.size() > 9) {
+            out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage+1) + "'>next</a>");
+        }
     %>
 </div>
