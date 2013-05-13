@@ -16,7 +16,14 @@
                 <td>  
                     <div id="photo">
                         <img src="assets/photo.png"/><br />
-                        <a href="">Change Profile Picture</a> 
+                        Change Profile Picture
+                        <br/>
+                        <form action="UploadServlet" method="post"
+                              enctype="multipart/form-data">
+                            <input type="file" name="file" size="15" />
+                            <br />
+                            <input type="submit" value="Upload File" />
+                        </form>
                     </div>
                 </td>
                 <td>
@@ -97,8 +104,8 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="#"><input type="button" value="save"></a></td>
-                                <td><a href="#"><input type="button" value="cancel"></a></td>
+                                <td><a href="#"><img src="assets/savechanges.png" id ="logbutton"/></a></td>
+                                <td><a href="#"><img src="assets/cancel.png" id ="logbutton"/></a></td>
                             </tr>
                             <br />
                         </table>

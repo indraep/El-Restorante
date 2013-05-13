@@ -101,6 +101,24 @@ root {
     margin: 0 auto;
 }
 
+#editprofile {
+    height: 800px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+#his {
+    height: 800px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+#about {
+    height: 800px;
+    background-color: red;
+    margin: 0 auto;
+}
+
 #div_menu_detail {
     height: 800px;
     background-color: red;
@@ -150,12 +168,9 @@ root {
     opacity: 0.7;
 }
 
-#editprofile {
-    width : 900px; height : 400px;;
-}
 
 #photo {
-    width : 200px;height : 400px;background-color : #FFCCCC; float : left;
+    width : 200px;height : 200px;background-color : #FFCCCC; float : left;
 }
 
 #userdata {

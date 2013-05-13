@@ -44,14 +44,14 @@
             <li>
                 <%
                     if (npage > 1) {
-                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage - 1) + "'>Sebelumnya</a>");
+                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage - 1) + "'><img src = 'assets/left.png' id='logbutton' width='20px' height='20px'/></a>");
                     }
                 %>
             </li>
             <li>
                 <%
                     if (menu.size() > 9) {
-                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage + 1) + "'>Berikutnya</a>");
+                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage + 1) + "'><img src = 'assets/right.png' id='logbutton' width='20px' height='20px'/></a>");
                     }
                 %>
             </li>

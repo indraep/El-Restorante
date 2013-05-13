@@ -37,8 +37,8 @@
                         <div class="triangle"></div>
                         <ul class="dropdown_user">
                             <li><a class="edit_anchor" href ="edit.jsp">Edit Profile</a></li>
-                            <li>View History</li>
-                            <li>About</li>
+                            <li><a class="edit_anchor" href ="orderhistory.jsp">View History</a></li>
+                            <li><a class="edit_anchor" href ="aboutus.jsp">About</a></li>
                             <li><a class="login_anchor" href ="login.jsp">Login</a></li>
                         </ul>
                     </div>

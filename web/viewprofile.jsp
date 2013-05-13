@@ -16,7 +16,6 @@
                 <td>  
                     <div id="photo">
                         <img src="assets/photo.png"/><br />
-                        <a href="">Change Profile Picture</a> 
                     </div>
                 </td>
                 <td>
@@ -89,15 +88,13 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="edit.jsp?edit=true">edit</a></td>
+                                <td><a href="edit.jsp?edit=true"><img src ="assets/edit.png" id ="logbutton"/></a></td>
                             </tr>
                             <br />
                         </table>
                     </div>
                 </td>
             </tr>
-
-
 
         </table>
 

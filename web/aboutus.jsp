@@ -1,7 +1,7 @@
 <%-- 
-    Document   : orderhistory
-    Created on : 13-May-2013, 14:59:07
-    Author     : cLienT
+    Document   : aboutus
+    Created on : 13 Mei 13, 17:09:35
+    Author     : Berty Tobing
 --%>
 
 <%@page import="java.util.*"%>
@@ -27,9 +27,7 @@
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
-                   
-                    <jsp:include page = 'history.jsp' flush = 'true' />
-                   
+                    <jsp:include page = 'about.jsp' flush = 'true' />
                 </td>
                 <td width="150px">
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
