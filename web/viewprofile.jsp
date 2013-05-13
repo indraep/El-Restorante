@@ -25,55 +25,51 @@
                             <tr>
                                 <td colspan="2"><strong>Biodata</strong></td>
                             </tr>
-                            <form action="editprofile.jsp" method="post">
                                 <tr>
                                     <td width="250px">Nama:</td>
-                                    <td colspan="2"><input type="text" name="name"></td>
+                                    <td colspan="2">Nama</td>
                                 </tr>
                                 <tr>
                                     <td>Usia:</td>
-                                    <td colspan="2"><input type="number" name="age"></td>
+                                    <td colspan="2">Usia</td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"><input type="date" name="birthdate"></td>
+                                    <td colspan="2">tgl_lahir</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
-                                    <td colspan="2"><input type="text" name="address"></td>
+                                    <td colspan="2">alamat</td>
                                 </tr>
                                 <tr>
                                     <td>Kota:</td>
-                                    <td colspan="2"><input type="text" name="city"></td>
+                                    <td colspan="2">kota</td>
                                 </tr>
                                 <tr>
                                     <td>Hobi:</td>
-                                    <td colspan="2"><input type="text" name="hobby"></td>
+                                    <td colspan="2">hobi</td>
                                 </tr>
                                 <tr>
                                     <td>Bio:</td>
-                                    <td colspan="2"><textarea rows="4" cols="20" name="bio"></textarea></td>
+                                    <td colspan="2">bio</td>
                                 </tr>
-                            </form>
                             <br />
 
-                            <form action="editprofile.jsp">
                                 <tr>
                                     <td colspan="2"><strong>Favorit</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Makanan Favorit</td>
-                                    <td colspan="2"><input type="text" name="fav_food"></td>
+                                    <td colspan="2">makanan</td>
                                 </tr>
                                 <tr>
                                     <td>Minuman Favorit:</td>
-                                    <td colspan="2"><input type="text" name="fav_drink"></td>
+                                    <td colspan="2">minuman</td>
                                 </tr>
                                 <tr>
                                     <td>Lainnya:</td>
-                                    <td colspan="2"><input type="text" name="fav_other"></td>
+                                    <td colspan="2">lainnya</td>
                                 </tr>
-                            </form>
                             <br />
 
                             <tr>
@@ -81,24 +77,19 @@
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td colspan="2"><input type="email" name="email"></td>
+                                <td colspan="2">email</td>
                             </tr>
                             <tr>
                                 <td>Username:</td>
-                                <td colspan="2"><input type="text" name="username"></td>
+                                <td colspan="2">username</td>
                             </tr>
                             <tr>
-                                <td>New Password:</td>
-                                <td colspan="2"><input type="password" name="password"></td>
-                            </tr>
-                            <tr>
-                                <td>Confirm New Password:</td>
-                                <td colspan="2"><input type="password" name ="confirmpass"></td>
+                                <td>Password:</td>
+                                <td colspan="2">Password</td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="#"><input type="button" value="save"></a></td>
-                                <td><a href="#"><input type="button" value="cancel"></a></td>
+                                <td><a href="editprofile.jsp">edit</a></td>
                             </tr>
                             <br />
                         </table>
