@@ -29,6 +29,7 @@
                 <td>
                    <%
                         String bagian = request.getParameter("edit");
+                        out.println(bagian);
                         if (bagian == null) {
                     %>
 

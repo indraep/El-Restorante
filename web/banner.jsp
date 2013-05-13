@@ -4,6 +4,7 @@
     Author     : indraep
 --%>
 
+<<<<<<< HEAD
     <%@page import="org.apache.tomcat.util.http.Cookies"%>
 <%      
         Cookie[] cookies = request.getCookies();
@@ -27,6 +28,8 @@
     });
 </script>
 
+=======
+>>>>>>> 068442e179b83946258ad7051cba627fc7cc9761
 <div id="banner">
         <nav>
             <ul class="dropdown_user">
