@@ -31,8 +31,8 @@
         </tr>
         <tr>
             <td>
-                <div style="width: 130px; height: 70px; background-color: blue">
-                    ADD TO CART
+                <div style="width: 130px; height: 70px">
+                    <center><a href="#"><img src="assets/addtocart.png"/></a></center>
                 </div>
             </td>
         </tr>

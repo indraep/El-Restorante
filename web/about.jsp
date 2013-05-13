@@ -30,7 +30,7 @@
                     <img src ="assets/indra.JPG" width="220px" height="300px"/>
                 </td>
                 <td style='padding: 20px'>
-                    <img src ="assets/rizal.jpg" width="220px" height="300px"/>
+                    <img src ="assets/capture.jpg" width="220px" height="300px"/>
                 </td>
             </tr>
         </table>
