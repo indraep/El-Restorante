@@ -17,16 +17,19 @@
     <body>
         <table id="mainTable">
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <jsp:include page = 'banner.jsp' flush = 'true' />
                 </td>
             </tr>
             <tr>
-                <td width="20%">
+                <td width="150px">
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
                     <jsp:include page = 'menu_per_category.jsp' flush = 'true' />
+                </td>
+                <td width="150px">
+                    <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
             </tr>
         </table>

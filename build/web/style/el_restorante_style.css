@@ -12,7 +12,7 @@ root {
 
 #mainTable {
     background-color: blue;
-    width: 800px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0;
 }
@@ -26,6 +26,7 @@ root {
 #banner {
     background-image: url(../assets/header.png);
     height: 90px;
+    margin: 0px;
 }
 
 #div_back_next {
