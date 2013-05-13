@@ -40,11 +40,13 @@
             out.print("</tr>");
         }
         out.print("</table>");
-        if (npage > 1) {
-            out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage-1) + "'>back</a>");
-        }
-        if (menu.size() > 9) {
-            out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage+1) + "'>next</a>");
-        }
+        out.print("<div id='div_back_next'>");
+            if (npage > 1) {
+                out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage-1) + "'>back</a>");
+            }
+            if (menu.size() > 9) {
+                out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage+1) + "'>next</a>");
+            }
+        out.print("</div>");
     %>
 </div>

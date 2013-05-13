@@ -5,6 +5,7 @@
 --%>
 
 <div id="banner">
+<<<<<<< HEAD
     <%
         out.print("<img src = 'assets/menu.png' id = 'menu' onclick='toggle();'>");
     %>
@@ -26,5 +27,9 @@
             <li><a href="index.jsp"/>About</li>
             <li><a href="login.jsp"/>Logout</li>
         </ul>
+=======
+    <div id="menu">
+        Login
+>>>>>>> 38ce5583782f523ac46e8be7bce85f77c09bf859
     </div>
 </div>

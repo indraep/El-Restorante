@@ -23,7 +23,7 @@
             </td>
             <td rowspan="2">
                 <div style="width: 130px; height: 200px; background-color: green">
-                    <a href="#" style="color: black"><%= menu.getName() %></a><br>
+                    <a href="<%= "show_menu_detail.jsp?id=" + menu.getId() %>" style="color: black"><%= menu.getName() %></a><br>
                     <%= menu.getDescription().length() <= 97 ? menu.getDescription() : menu.getDescription().substring(0, 97) + "..." %><br>
                     <%= menu.getPrice() %>
                 </div>
