@@ -89,7 +89,7 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="editprofile.jsp">edit</a></td>
+                                <td><a href="edit.jsp?edit=true">edit</a></td>
                             </tr>
                             <br />
                         </table>

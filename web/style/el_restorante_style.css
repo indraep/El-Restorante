@@ -206,10 +206,10 @@ ul.dropdown_user li:hover .dropdownContain { top: 65px; }
 ul.dropdown_user li:hover .underline { border-bottom-color: #777; }
 ul.dropdown_user li:hover .dropOut { opacity: 1; margin-top: 8px; } 
 
-#hai {
-    float: bottom;
+.login_anchor {
+    text-decoration: none;
 }
 
-.login_anchor {
+.edit_anchor {
     text-decoration: none;
 }
