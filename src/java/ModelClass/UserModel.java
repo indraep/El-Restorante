@@ -18,64 +18,68 @@ import org.apache.catalina.connector.Request;
  * @author indraep
  */
 public class UserModel {
+
     private Statement statement;
 
-    public User login(String uname, String pass) throws Exception{
+    public User login(String uname, String pass) throws Exception {
         connectToDB();
-        
+
         String query = "select * from user where username = '" + uname + "' AND password = md5('" + pass + "')";
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
-        
+
         User ret = null;
         while (resultSet.next()) {
             String nama = resultSet.getObject(1).toString();
             String username = uname;
             String password = resultSet.getObject(2).toString();
-            String alamat= resultSet.getObject(4).toString();
+            String alamat = resultSet.getObject(4).toString();
             String email = resultSet.getObject(5).toString();
             String birthDate = "";
             String bio = "";
             ret = new User(nama, username, password, alamat, email, birthDate, bio);
         }
-        
+
         return ret;
     }
-    
+
     public boolean register(String nama, String username, String password, String email, String alamat, String birth, String status) throws Exception {
         connectToDB();
-        String query = "select * from user where username = '" + nama + "'";
+        String query = "select * from user where username = '" + username + "'";
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
-        while (resultSet.next()) {
+
+        if (resultSet.getRow() > 0) {
             return false;
         }
-        String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "'";
+        String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "')";
+        
+        int res = statement.executeUpdate(que);
         return true;
     }
-    
+
     public User getUserByUsername(String uname) throws Exception {
         connectToDB();
-        
+
         String query = "select * from user where username = '" + uname + "'";
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
-        
+
         User ret = null;
         while (resultSet.next()) {
             String nama = resultSet.getObject(1).toString();
             String username = uname;
             String password = resultSet.getObject(2).toString();
-            String alamat= resultSet.getObject(4).toString();
+            String alamat = resultSet.getObject(4).toString();
             String email = resultSet.getObject(5).toString();
             String birthDate = "";
             String bio = "";
             ret = new User(nama, username, password, alamat, email, birthDate, bio);
         }
-        
+
         return ret;
     }
-    
+
     private void connectToDB() throws Exception {
         if (statement != null) {
             return;

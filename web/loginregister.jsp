@@ -44,6 +44,7 @@
     Silahkan register!
     <br>
     <form action="login.jsp" method="post">
+        <input type="hidden" name="register" value="true" />
         <table>    
             <tr>
                 <td>
@@ -104,7 +105,6 @@
             <tr>
                 <td>
                     <input type="submit" value="register"/>
-                    <input type="hidden" name="register" value="true"/>
                     <img src ="assets/register.png" id ="regbutton"/>
                 </td>
             </tr>
