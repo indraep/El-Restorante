@@ -4,15 +4,6 @@
     Author     : indraep
 --%>
 
-<script>
-    $('.menu').click(function() {
-        $(this).next('.a_menu').show();
-    });
-    $('body, .a_menu a').click(function() {
-        $('.a_menu').hide();
-    });
-</script>
-
 <div id="banner">
     <%
         Cookie[] cookies = request.getCookies();

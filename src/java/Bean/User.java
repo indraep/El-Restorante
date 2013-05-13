@@ -116,8 +116,8 @@ public class User {
         
         int selisih = tahun2 - tahun;
         
-        if (bulan2 > bulan) selisih++;
-        if (bulan2 == bulan && tanggal2 >= tanggal) selisih++;
+        if (bulan2 < bulan) selisih--;
+        if (bulan2 == bulan && tanggal2 < tanggal) selisih--;
         return "" + selisih;
     }
 }

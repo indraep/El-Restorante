@@ -42,6 +42,18 @@ public class UserModel {
         return ret;
     }
     
+    public boolean register(String nama, String username, String password, String email, String alamat, String birth, String status) throws Exception {
+        connectToDB();
+        String query = "select * from user where username = '" + nama + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        while (resultSet.next()) {
+            return false;
+        }
+        String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "'";
+        return true;
+    }
+    
     public User getUserByUsername(String uname) throws Exception {
         connectToDB();
         
