@@ -87,7 +87,16 @@ root {
 
 #regbutton:hover {
     opacity: 0.7;
-=======
-    top: 70px;
->>>>>>> 38ce5583782f523ac46e8be7bce85f77c09bf859
+}
+
+#editprofile {
+    width : 900px; height : 400px;;
+}
+
+#photo {
+    width : 200px;height : 400px;background-color : #FFCCCC; float : left;
+}
+
+#userdata {
+    width : 700px; height : 400px;float : left;
 }

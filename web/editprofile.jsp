@@ -8,14 +8,12 @@
 <!DOCTYPE html>
 <div id="editprofile">
     <h3>Edit Profile</h3>
-
-
     <div id="userdata">
         <table>
             <tr>
                 <td>  
                     <div id="photo">
-                        <img src="assets/photo.png"/><br />
+                        <img src="assets/default_profpic.png"/><br />
                         <a href="">Change Profile Picture</a> 
                     </div>
                 </td>
@@ -59,7 +57,7 @@
                                 <td><a href="#">cancel</a></td>
                             </tr>
                             <br />
-                            
+
                             <tr>
                                 <td colspan="2"><strong>Favorit</strong></td>
                             </tr>
@@ -81,7 +79,7 @@
                                 <td><a href="#">cancel</a></td>
                             </tr>
                             <br />
-                            
+
                             <tr>
                                 <td colspan="2"><strong>Akun</strong></td>
                             </tr>
