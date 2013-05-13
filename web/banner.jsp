@@ -14,9 +14,22 @@
 </script>
 
 <div id="banner">
+    <%
+        Cookie[] cookies = request.getCookies();
+        String name = null;
+        if (cookies != null && cookies.length != 0) {
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals("username")) {
+                    name = cookies[i].getValue();
+                }
+            }
+        }
+        
+        if (name != null)
+            out.print("Hello " + name);
+    %>
     <nav>
         <ul class="dropdown_user">
-            <li id="hai">Rizal Bahriawan</li>
             <li class="drop">
                 <a class="drop_anchor" href="#"><img src = "assets/menu.png" /></a>
                 <div class="dropdownContain">

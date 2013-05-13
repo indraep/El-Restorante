@@ -4,31 +4,38 @@
     Author     : Berty Tobing
 --%>
 
+<%@page import="Bean.User"%>
+<%@page import="ModelClass.UserModel"%>
+
+
 <div id ="loginregister">
     Login
-    <table>
-        <tr>
-            <td>
-                Username:
-            </td>
-            <td>
-                <input type="text" name="username" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Password:
-            </td>
-            <td>
-                <input type="text" name="password" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src ="assets/login.png" id ="logbutton"/>
-            </td>
-        </tr>
-    </table>
+    <form action="login.jsp" method="post">
+        <table>
+            <tr>
+                <td>
+                    Username:
+                </td>
+                <td>
+                    <input type="text" name="username" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="password" name="password" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+                </td>
+            </tr>
+            <tr>
+                <td>    
+                    <input type="submit" value="login"/>
+                    <img src ="assets/login.png" id ="logbutton"/>
+                </td>
+            </tr>
+        </table>
+    </form>
     <br/>
     <br/>
     <br/>

@@ -4,10 +4,26 @@
     Author     : Berty Tobing
 --%>
 
+<%@page import="Bean.User"%>
+<%@page import="ModelClass.UserModel"%>
 <%@page import="java.util.*"%>
 <%@page import="ModelClass.CategoryModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    UserModel userModel = new UserModel();
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+
+    if (username != null && password != null && username.length() >0 && password.length() > 0) {
+        User user = userModel.login(username, password);
+        if (user != null) {
+            Cookie cookie = new Cookie("username", username);
+            response.addCookie(cookie);
+            response.sendRedirect("index.jsp");
+        }
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
