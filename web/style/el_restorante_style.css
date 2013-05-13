@@ -84,9 +84,9 @@ root {
     height: 800px;
 }
 
-#banner {
-    background-image: url(../assets/header.png);
+#banner { 
     height: 90px;
+    background: url(../assets/header.png);
     margin: 0px;
 }
 
@@ -155,7 +155,6 @@ root {
 }
 
 #mainLogin {
-    background-color: blue;
     width: 1200px;
     margin: 0 auto;
     padding: 0;
