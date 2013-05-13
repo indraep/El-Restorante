@@ -20,15 +20,11 @@
 </script>
 
 <div id="sidebar">
+    <h4>Category</h4>
+
     <%
         CategoryModel categoryModel = new CategoryModel();
         ArrayList<Category> category = categoryModel.getCategory();
-    %>
-
-    <h4>Category</h4>
-
-
-    <%
         for (int i = 0; i < category.size(); i++) {
     %>
         <a class="category" href="<%= "index.jsp?categoryId=" + category.get(i).getId()%>"><%= category.get(i).getName()%></a><br/>

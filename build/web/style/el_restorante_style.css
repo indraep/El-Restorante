@@ -73,13 +73,12 @@ root {
 }
 
 #mainTable {
-    background-color: blue;
     width: 1200px;
     margin: 0 auto;
     padding: 0;
 }
 
-#sidebar {
+#sidebar, #right_sidebar {
     background-image: url(../assets/left_sidebar.png);
     height: 800px;
 }
@@ -92,25 +91,23 @@ root {
 
 #div_back_next {
     position: absolute;
-    background-color: yellow;
 }
 
 #daftar {
     height: 800px;
-    background-color: red;
     margin: 0 auto;
 }
 
 #editprofile {
     height: 800px;
-    background-color: red;
     margin: 0 auto;
+    margin-left: 30px;
 }
 
 #his {
     height: 800px;
-    background-color: red;
     margin: 0 auto;
+    margin-left: 30px;
 }
 
 #about {
