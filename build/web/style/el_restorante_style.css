@@ -43,4 +43,34 @@ root {
 
 #menu {
     float: right;
+    margin-top: 7%;
+}
+
+#newpost {
+    position: absolute;
+    float: right;
+    margin-left: 50%;
+}
+
+#show {
+    background-color: white;
+}
+
+#login {
+    background-image: url(../assets/bg_home.png);
+    height: 500px;
+}
+
+#mainLogin {
+    width: 77%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#logbutton:hover {
+    opacity: 0.7;
+}
+
+#regbutton:hover {
+    opacity: 0.7;
 }

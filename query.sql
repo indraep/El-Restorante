@@ -48,7 +48,7 @@ create table menu (
 	name text not null,
 	description text not null,
 	price int not null,
-	foreign key (category_id) references category (category_id)
+	foreign key (category_id) references category (id)
 );
 
 

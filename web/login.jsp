@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : May 4, 2013, 8:59:52 AM
-    Author     : indraep
+    Document   : login
+    Created on : 13 Mei 13, 10:58:17
+    Author     : Berty Tobing
 --%>
 
 <%@page import="java.util.*"%>
@@ -16,18 +16,18 @@
     </head>
     <body>
         
-        <table id="mainTable">
+        <table id="mainLogin">
             <tr>
                 <td colspan="2">
                     <jsp:include page = 'banner.jsp' flush = 'true' />
                 </td>
             </tr>
-            <tr>
-                <td width="20%">
-                    <jsp:include page = 'sidebar.jsp' flush = 'true' />
+            <tr id ="login">
+                <td width="80%">
+                    Welcome to El-Restorante
                 </td>
                 <td>
-                    <jsp:include page = 'menu_per_category.jsp' flush = 'true' />
+                    <jsp:include page = 'loginregister.jsp' flush = 'true' />
                 </td>
             </tr>
         </table>
