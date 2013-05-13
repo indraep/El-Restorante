@@ -15,12 +15,19 @@
 
 <div id="banner">
     <%
+        String loggedOut = request.getParameter("logged_out");
+        
         Cookie[] cookies = request.getCookies();
         String name = null;
         if (cookies != null && cookies.length != 0) {
             for (int i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName().equals("username")) {
-                    name = cookies[i].getValue();
+                    if (loggedOut != null && loggedOut.equals("true")) {
+                        cookies[i].setMaxAge(0);
+                        response.addCookie(cookies[i]);
+                    }
+                    else
+                        name = cookies[i].getValue();
                 }
             }
         }
@@ -39,7 +46,7 @@
                                 <% } %>
                                 <li><a class="edit_anchor" href ="aboutus.jsp">About</a></li>
                                 <% if (name != null) { %>
-                                    <li><a class="login_anchor" href ="login.jsp">Logout</a></li>
+                                    <li><a class="login_anchor" href ="index.jsp?logged_out=true">Logout</a></li>
                                 <% } else {%>
                                     <li><a class="login_anchor" href ="login.jsp">Login</a></li>
                                 <% } %>
