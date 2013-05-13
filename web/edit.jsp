@@ -29,14 +29,12 @@
                 <td>
                    <%
                         String bagian = request.getParameter("edit");
-                        out.println(bagian);
                         if (bagian == null) {
-                    %>
-
-                    <jsp:include page = 'viewprofile.jsp' flush = 'true' />
-                    <% } else {%>
-                    <jsp:include page = 'editprofile.jsp' flush = 'true' />
-                    <% }%>
+                   %>
+                        <jsp:include page = 'viewprofile.jsp' flush = 'true' />
+                   <% } else { %>
+                        <jsp:include page = 'editprofile.jsp' flush = 'true' />
+                   <% } %>
                 </td>
                 <td width="150px">
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />

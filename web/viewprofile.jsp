@@ -17,7 +17,6 @@
             if (cookies[i].getName().equals("username"))
                 username = cookies[i].getValue();
     }
-    System.out.println("username = " + username);
     User user = userModel.getUserByUsername(username);
 %>
 <div id="editprofile">
