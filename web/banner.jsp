@@ -4,20 +4,19 @@
     Author     : indraep
 --%>
 
-<<<<<<< HEAD
     <%@page import="org.apache.tomcat.util.http.Cookies"%>
 <%      
-        Cookie[] cookies = request.getCookies();
-        String name = null;
-        if (cookies != null && cookies.length != 0) {
-            for (int i = 0; i < cookies.length; i++) {
-                Cookie cookie = cookies[i];
-                if (cookie.getName().equals("username")) {
-                    name = cookies[i].getValue();
-                } 
-            }
+    Cookie[] cookies = request.getCookies();
+    String name = null;
+    if (cookies != null && cookies.length != 0) {
+        for (int i = 0; i < cookies.length; i++) {
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("username")) {
+                name = cookies[i].getValue();
+            } 
         }
-    %>
+    }
+%>
 
 <script>
     $('.menu').click(function() {
@@ -28,8 +27,6 @@
     });
 </script>
 
-=======
->>>>>>> 068442e179b83946258ad7051cba627fc7cc9761
 <div id="banner">
         <nav>
             <ul class="dropdown_user">

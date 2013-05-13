@@ -75,7 +75,7 @@ root {
 #mainTable {
     width: 1200px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0; 
 }
 
 #sidebar, #right_sidebar {
@@ -113,7 +113,7 @@ root {
 
 #about {
     height: 800px;
-    background-color: red;
+    background-image: url(../assets/bg_home.png);
     margin: 0 auto;
 }
 

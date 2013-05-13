@@ -29,9 +29,8 @@
                 </td>
             </tr>
             <tr>
-                <td>    
-                    <input type="submit" value="login"/>
-                    <img src ="assets/login.png" id ="logbutton"/>
+                <td>
+                    <button type="submit"><img src ="assets/login.png" alt="Login" id ="logbutton"/></button>
                 </td>
             </tr>
         </table>

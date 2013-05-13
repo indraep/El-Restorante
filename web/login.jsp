@@ -21,7 +21,6 @@
         String password = request.getParameter("password");
 
         if (username != null && password != null && username.length() > 0 && password.length() > 0) {
-            out.print("LOGIN");
             User user = userModel.login(username, password);
             if (user != null) {
                 Cookie cookie = new Cookie("username", username);
@@ -31,7 +30,6 @@
 
         }
     } else {
-        out.println("ADA");
         UserModel userModel = new UserModel();
         String nama = request.getParameter("namereg");
         String username = request.getParameter("usernamereg");

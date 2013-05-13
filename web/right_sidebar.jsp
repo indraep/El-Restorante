@@ -20,5 +20,5 @@
 </script>
 
 <div id="right_sidebar">
-    <h4>Cart</h4>
+    <p><img src="assets/cart.png" width="30px" height="30px"/></p>
 </div>
