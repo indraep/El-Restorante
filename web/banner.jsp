@@ -14,16 +14,23 @@
 </script>
 
 <div id="banner">
-    <%
-        out.print("<img src = 'assets/menu.png' id = 'menu' onclick='toggle();'>");
-    %>
-
-    <div id="newpost">
-        <ul id ="show">
-            <li><a href="index.jsp"/>Edit Profile</li>
-            <li><a href="index.jsp"/>View Order History</li>
-            <li><a href="index.jsp"/>About</li>
-            <li><a href="login.jsp"/>Logout</li>
+    <nav>
+        <ul class="dropdown_user">
+            <li id="hai">Rizal Bahriawan</li>
+            <li class="drop">
+                <a class="drop_anchor" href="#"><img src = "assets/menu.png" /></a>
+                <div class="dropdownContain">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul class="dropdown_user">
+                            <li>Edit Profile</li>
+                            <li>View History</li>
+                            <li>About</li>
+                            <li><a class="login_anchor" href ="login.jsp">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
         </ul>
-    </div>
+    </nav>
 </div>
