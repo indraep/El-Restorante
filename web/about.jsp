@@ -7,30 +7,30 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div id="about">
-    <h1>El-Restorante adalah proyek website produksi Galaksi 2013</h1>
+    <center><h2>El-Restorante adalah proyek website produksi Galaksi 2013</h2></center>
     <center><img src ="assets/galaksi.jpg"/></center>
     <center>
         <table>
             <tr>
                 <td style='padding: 20px'>
-                    Berty Chrismartin Lumban Tobing
-                </td>
-                <td style='padding: 20px'>
-                    Indra Eka Prasetya
-                </td>
-                <td style='padding: 20px'>
-                    Rizal Bahriawan
-                </td>
+            <center>Berty Chrismartin Lumban Tobing</center>
+            </td>
+            <td style='padding: 20px'>
+            <center>Indra Eka Prasetya</center>
+            </td>
+            <td style='padding: 20px'>
+            <center>Rizal Bahriawan</center>
+            </td>
             </tr>
             <tr >
                 <td style='padding: 20px'>
                     <img src ="assets/gw.jpg" width="220px" height="300px"/>
                 </td>
                 <td style='padding: 20px' >
-                    Berty
+                    <img src ="assets/indra.JPG" width="220px" height="300px"/>
                 </td>
                 <td style='padding: 20px'>
-                    Berty
+                    <img src ="assets/rizal.jpg" width="220px" height="300px"/>
                 </td>
             </tr>
         </table>

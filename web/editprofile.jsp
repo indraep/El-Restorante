@@ -22,7 +22,7 @@
                               enctype="multipart/form-data">
                             <input type="file" name="file" size="15" />
                             <br />
-                            <input type="submit" value="Upload File" />
+                            <a href="#"><img src="assets/upload.png"/></a>
                         </form>
                     </div>
                 </td>
