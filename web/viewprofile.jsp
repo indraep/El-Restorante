@@ -4,12 +4,24 @@
     Author     : cLienT
 --%>
 
+<%@page import="ModelClass.UserModel"%>
+<%@page import="Bean.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    UserModel userModel = new UserModel();
+    Cookie[] cookies = request.getCookies();
+    String username = null;
+    if (cookies != null && cookies.length != 0) {
+        for (int i = 0; i < cookies.length; i++)
+            if (cookies[i].getName().equals("username"))
+                username = cookies[i].getValue();
+    }
+    System.out.println("username = " + username);
+    User user = userModel.getUserByUsername(username);
+%>
 <div id="editprofile">
     <h3>Edit Profile</h3>
-
-
     <div id="userdata">
         <table>
             <tr>
@@ -26,7 +38,7 @@
                             </tr>
                                 <tr>
                                     <td width="250px">Nama:</td>
-                                    <td colspan="2">Nama</td>
+                                    <td colspan="2"><%= user.getNama() %></td>
                                 </tr>
                                 <tr>
                                     <td>Usia:</td>
@@ -34,23 +46,19 @@
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2">tgl_lahir</td>
+                                    <td colspan="2"> Birth Date</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
-                                    <td colspan="2">alamat</td>
+                                    <td colspan="2"><%= user.getAlamat()%></td>
                                 </tr>
                                 <tr>
                                     <td>Kota:</td>
                                     <td colspan="2">kota</td>
                                 </tr>
                                 <tr>
-                                    <td>Hobi:</td>
-                                    <td colspan="2">hobi</td>
-                                </tr>
-                                <tr>
                                     <td>Bio:</td>
-                                    <td colspan="2">bio</td>
+                                    <td colspan="2">Bio</td>
                                 </tr>
                             <br />
 
@@ -76,11 +84,11 @@
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td colspan="2">email</td>
+                                <td colspan="2"><%= user.getEmail() %></td>
                             </tr>
                             <tr>
                                 <td>Username:</td>
-                                <td colspan="2">username</td>
+                                <td colspan="2"><%= user.getUsername() %></td>
                             </tr>
                             <tr>
                                 <td>Password:</td>
