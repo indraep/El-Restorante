@@ -31,7 +31,7 @@ public class UserModel {
         while (resultSet.next()) {
             String nama = resultSet.getObject(1).toString();
             String username = uname;
-            String password = pass;
+            String password = resultSet.getObject(2).toString();
             String alamat= resultSet.getObject(4).toString();
             String email = resultSet.getObject(5).toString();
             String birthDate = "";
@@ -51,10 +51,14 @@ public class UserModel {
         
         User ret = null;
         while (resultSet.next()) {
-            String[] data = new String[metaData.getColumnCount()];
-            for (int i = 1; i <= data.length; i++)
-                data[i - 1] = resultSet.getObject(i).toString();
-            ret = new User(data);
+            String nama = resultSet.getObject(1).toString();
+            String username = uname;
+            String password = resultSet.getObject(2).toString();
+            String alamat= resultSet.getObject(4).toString();
+            String email = resultSet.getObject(5).toString();
+            String birthDate = "";
+            String bio = "";
+            ret = new User(nama, username, password, alamat, email, birthDate, bio);
         }
         
         return ret;
