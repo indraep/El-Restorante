@@ -56,18 +56,18 @@ root {
 #menu {
     position: relative;
     float: right;
-<<<<<<< HEAD
     margin-top: 7%;
 }
 
 #newpost {
-    position: absolute;
     float: right;
-    margin-left: 50%;
+    left: 1050px;
+    top: 10px;
 }
 
 #show {
     background-color: white;
+    list-style-type: none;
 }
 
 #login {
