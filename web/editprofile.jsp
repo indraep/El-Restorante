@@ -9,7 +9,9 @@
 <div id="editprofile">
     <h3>Edit Profile</h3>
 
-
+    <%
+        
+    %>
     <div id="userdata">
         <table>
             <tr>

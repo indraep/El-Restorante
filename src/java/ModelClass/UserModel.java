@@ -49,7 +49,7 @@ public class UserModel {
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
 
-        if (resultSet.getRow() > 0) {
+        while (resultSet.next()) {
             return false;
         }
         String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "')";

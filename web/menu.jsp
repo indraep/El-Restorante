@@ -22,7 +22,7 @@
                 </div>
             </td>
             <td>
-                <div style="width: 130px; height: 130px; background-color: green">
+                <div style="width: 130px; height: 130px; background-image: url(assets/description_bg.png)">
                     <a href="<%= "show_menu_detail.jsp?id=" + menu.getId() %>" style="color: black"><%= menu.getName() %></a><br>
                     <%= menu.getDescription().length() <= 40 ? menu.getDescription() : menu.getDescription().substring(0, 40) + "..." %><br>
                     
@@ -31,12 +31,12 @@
         </tr>
         <tr>
             <td>
-                <div style="width: 130px; height: 70px">
+                <div style="width: 130px; height: 30px">
                     <center><a href="#"><img src="assets/addtocart.png"/></a></center>
                 </div>
             </td>
             <td>
-                <div style="width: 130px; height: 70px">
+                <div style="width: 130px; height: 30px; background-image: url(assets/price_bg.png)">
                     <center>Rp.<%= menu.getPrice() %></center>
                 </div>
             </td>
