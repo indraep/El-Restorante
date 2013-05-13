@@ -5,7 +5,7 @@
 --%>
 
 <div id="banner">
-    <%
-        out.print("<img src = 'assets/menu.png' id = 'menu'>");
-    %>
+    <div id="menu">
+        Login
+    </div>
 </div>

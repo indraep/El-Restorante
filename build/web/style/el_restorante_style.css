@@ -28,7 +28,18 @@ root {
     height: 90px;
 }
 
+#div_back_next {
+    position: absolute;
+    background-color: yellow;
+}
+
 #daftar {
+    height: 800px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+#div_menu_detail {
     height: 800px;
     background-color: red;
 }
@@ -42,5 +53,7 @@ root {
 }
 
 #menu {
+    position: relative;
     float: right;
+    top: 70px;
 }
