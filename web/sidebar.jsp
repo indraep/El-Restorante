@@ -32,7 +32,7 @@
         }
     %>
     <br/>
-    <form method="get" action="index.jsp"> 
+    <form method="get" action="searchindex.jsp"> 
         <table cellpadding="0px" cellspacing="0px"> 
             <tr> 
                 <td style="border-style:solid none solid solid;border-color:#ff9900;border-width:1px;">
