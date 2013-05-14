@@ -9,7 +9,7 @@
 
 
 <div id ="loginregister">
-    Login
+    <h3>Login</h3>
     <form action="login.jsp" method="post">
         <table>
             <tr>
@@ -39,10 +39,8 @@
     <br/>
     <br/>
     <br/>
-    Tidak punya account?
-    <br>
-    Silahkan register!
-    <br>
+    <h3>Tidak punya account?</h3>
+    <h4>Silahkan register!</h4>
     <form action="login.jsp" method="post">
         <input type="hidden" name="register" value="true" />
         <table>    

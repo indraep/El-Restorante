@@ -89,8 +89,8 @@
                 </td>
             </tr>
             <tr id ="login">
-                <td width="80%">
-                    Welcome to El-Restorante
+                <td>
+                    <jsp:include page ='slider.jsp' flush = 'true' />
                 </td>
                 <td>
                     <jsp:include page = 'loginregister.jsp' flush = 'true' />

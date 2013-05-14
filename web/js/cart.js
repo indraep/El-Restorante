@@ -1,10 +1,7 @@
 $(document).ready(function() {
-<<<<<<< HEAD
     printCart(); 
     alert(getOrder());
-=======
     printCart();
->>>>>>> 525fabb5d1f1c89f1b7c8f5575e20c34adb92d27
 });
 
 function getOrder() {
