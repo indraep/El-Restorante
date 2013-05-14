@@ -44,7 +44,7 @@
                     out.print("<section class='container'>");
                     out.print("<h2>Diurutkan berdasarkan " + cetak + "</h2>");
                     out.print("<br/>");
-                    out.print("<table border='1'>");
+                    out.print("<table border='1' style='background-color: orange'>");
                     out.print("<thead>");
                     out.print("<tr>");
                     out.print("<td><strong>No</strong></td>");
