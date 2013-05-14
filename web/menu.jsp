@@ -17,7 +17,8 @@
         <tr>
             <td>
                 <div style="width: 130px; height: 130px; background-color: white">
-                    <image src='' alt="<%= menu.getName() %>" height='130px' width='130px'/>
+                    <% String src = "retrieve_menu_image.jsp?id=" + menu.getId(); %>
+                    <img src="<%= src %>" alt="<%= menu.getName() %>" height='130px' width='130px'/>
                 </div>
             </td>
             <td>
