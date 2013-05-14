@@ -176,6 +176,7 @@ root {
 
 #photo {
     width : 200px;height : 200px;background-color : #FFCCCC; float : left;
+    margin-top: -90px;
 }
 
 #userdata {

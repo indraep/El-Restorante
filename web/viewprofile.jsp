@@ -29,7 +29,7 @@
                         <img src="assets/photo.png"/><br />
                     </div>
                 </td>
-                <td>
+                <td style="padding-left: 30px">
                     <div id= "userdata">
                         <table>
                             <tr>
