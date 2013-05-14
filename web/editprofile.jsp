@@ -37,17 +37,18 @@
                 if ((password == null || password.length() == 0)) {
                     udah = model.update(nama, username, password, email, address, birthdate, bio, 0);
                 } else {
-                    if (password.equals(confirmpass))
+                    if (password.equals(confirmpass)) {
                         udah = model.update(nama, username, password, email, address, birthdate, bio, 1);
-                    
+                    }
+
                 }
-                
+
                 if (!udah) {
                     out.println("<script>alert('Password tidak sesuai!');</script>");
                     response.sendRedirect("edit.jsp");
-                }
-                else
+                } else {
                     response.sendRedirect("view.jsp");
+                }
             }
         }
 
@@ -98,10 +99,10 @@
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"><input type="date" name="birthdate" value ="<%= a.getBirthDate() %>">
-                                    <input type="hidden" name="hidbirt" value="<%= a.getBirthDate()%>"/>
+                                    <td colspan="2"><input type="date" name="birthdate" value ="<%= a.getBirthDate()%>">
+                                        <input type="hidden" name="hidbirt" value="<%= a.getBirthDate()%>"/>
                                     </td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
@@ -158,11 +159,11 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>
-                                        
+                                    <td style="padding-top: 20px">
+
                                         <input type="image" name="ganti" value="login" src="assets/savechanges.png" id ="logbutton" />
                                         <input type="hidden" name="hi" value="hii"/>
-                                    <td><a href="view.jsp"><img src="assets/cancel.png" id ="logbutton"/></a></td>
+                                    <td style="padding-top: 20px"><a href="view.jsp"><img src="assets/cancel.png" id ="logbutton"/></a></td>
                                 </tr>
                                 <br />
                             </table>

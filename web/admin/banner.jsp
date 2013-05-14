@@ -38,7 +38,7 @@
                         <ul class="dropdown_user">
 
                             <% if (name != null) {%>
-                            <li><a class="login_anchor" href ="LogoutServletAd">Logout</a></li>
+                            <li><a class="login_anchor" href ="logout.jsp">Logout</a></li>
                                 <% } else {%>
                             <li><a class="login_anchor" href ="login.jsp">Login</a></li>
                                 <% }%>

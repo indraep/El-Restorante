@@ -87,7 +87,7 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="edit.jsp"><img src ="assets/edit.png" id ="logbutton"/></a></td>
+                                <td style="padding-top: 20px"><a href="edit.jsp"><img src ="assets/edit.png" id ="logbutton"/></a></td>
                             </tr>
                             <br />
                         </table>

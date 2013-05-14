@@ -158,11 +158,11 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>
+                                    <td  style="padding-top: 20px">
                                         
                                         <input type="image" name="ganti" value="login" src="../assets/savechanges.png" id ="logbutton" />
                                         <input type="hidden" name="hi" value="hii"/>
-                                    <td><a href="view.jsp"><img src="../assets/cancel.png" id ="logbutton"/></a></td>
+                                    <td style="padding-top: 20px"><a href="view.jsp"><img src="../assets/cancel.png" id ="logbutton"/></a></td>
                                 </tr>
                                 <br />
                             </table>

@@ -9,6 +9,8 @@
 
 
 <div id ="loginregister">
+    <p><h2 style="color: orangered">El-Restorante</h2></p>
+    <br/>
     <h3>Login</h3>
     <form action="login.jsp" method="post">
         <table>
@@ -30,14 +32,12 @@
             </tr>
             <tr>
                 <td>
-                    <input type="image" name="logbutton" value="login" src="assets/login.png" />
+                    <input type="image" name="logbutton" value="login" src="assets/login.png" id="order"/>
                     <input type="hidden" name="logbutton" value="login" />
                 </td>
             </tr>
         </table>
     </form>
-    <br/>
-    <br/>
     <br/>
     <h3>Tidak punya account?</h3>
     <h4>Silahkan register!</h4>
@@ -72,40 +72,40 @@
                 <td>
                     Username:
                 </td>
-                <td>
-                    <input type="text" name="usernamereg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Password:
-                </td>
-                <td>
-                    <input type="text" name="passwordreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Tanggal lahir:
-                </td>
-                <td>
-                    <input type="date" name="birthdatereg">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Status:
-                </td>
-                <td>
-                    <input type="text" name="statusreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="image" name="regbutton" value="register" src="assets/register.png" />
-                    <input type="hidden" name="regbutton" value="register" />
-                </td>
-            </tr>
-        </table>
-    </form>
+            <td>
+                <input type="text" name="usernamereg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="passwordreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tanggal lahir:
+            </td>
+            <td>
+                <input type="date" name="birthdatereg">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status:
+            </td>
+            <td>
+                <input type="text" name="statusreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="image" name="regbutton" value="register" src="assets/register.png" id="order" />
+                <input type="hidden" name="regbutton" value="register" />
+            </td>
+        </tr>
+    </table>
+</form>
 </div>

@@ -41,10 +41,10 @@
            
             <tr>
                 <td></td>
-                <td><input type="image" name="tambahKategori" value="add" src="../assets/savechanges.png" id ="logbutton" />
+                <td style="padding-top: 20px"><input type="image" name="tambahKategori" value="add" src="../assets/savechanges.png" id ="logbutton" />
                     <input type="hidden" name="update" value="<%= kategori %>"/>
                 </td>
-                <td><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
+                <td style="padding-top: 20px"><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
                             </tr>
 
                             </table>

@@ -1,9 +1,4 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-    printCart(); 
-    alert(getOrder());
-=======
->>>>>>> d89cbe41a26662324940ac20868012787c923913
     printCart();
 });
 
@@ -52,7 +47,7 @@ function printCart() {
         var nama = getName(temp[i]);
         if (nama.length > len) nama = nama.substring(0, len) + "...";
         
-        isi += "<p class='category'>" + nama + "</p> <a style=\"margin-left: 5px;\" href=javascript:removeFromCart(" + getId(temp[i]) + ")>a</a>";
+        isi += "<p class='category'>" + nama + "</p> <a style=\"margin-left: 5px;\" href=javascript:removeFromCart(" + getId(temp[i]) + ")><img src='assets/remove.png'/></a>";
     }
 
     if (isi.length > 0) {

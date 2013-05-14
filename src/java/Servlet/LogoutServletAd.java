@@ -33,18 +33,19 @@ public class LogoutServletAd extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        out.print("<h2>MASUK</h2>");
         try {
            Cookie[] cookies = request.getCookies();
            if (cookies != null) {
                 for (int i = 0; i < cookies.length; i++) {
-                    System.out.println(cookies[i].getName());
+                    out.print(cookies[i].getName() + "<br/>");
                     if (cookies[i].getName().equals("usernameadmin")) {
                         cookies[i] = new Cookie("usernameadmin", null);
                         cookies[i].setMaxAge(0);
                         response.addCookie(cookies[i]);
                     }
                 }
-                response.sendRedirect("index.jsp?logged_out=true");
+                //response.sendRedirect("admin/index.jsp?logged_out=true");
            }
         } finally {            
             out.close();
