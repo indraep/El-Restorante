@@ -26,7 +26,6 @@
             out.print("<script>clearCart();</script>");
         }
     %>
-    <p><img src="assets/cart.png" width="30px" height="30px"/></p>
     <center><p><img src="assets/cart.png" width="30px" height="30px"/></p></center>
 
     <div id="cart">

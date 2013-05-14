@@ -31,9 +31,9 @@
     <%
         }
     %>
-    <br/>
+    <p><h4>Search:</h4></p>
     <form method="get" action="searchindex.jsp"> 
-        <table cellpadding="0px" cellspacing="0px"> 
+        <table style="padding-left: 10px" cellpadding="0px" cellspacing="0px"> 
             <tr> 
                 <td style="border-style:solid none solid solid;border-color:#ff9900;border-width:1px;">
                     <input type="text" name="cari" style="width:100px; border:0px solid; height:17px; padding:0px 3px; position:relative;"> 

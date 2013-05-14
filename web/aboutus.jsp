@@ -15,7 +15,7 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.cookie.js"></script>
         <script type="text/javascript" src="js/cart.js"></script>
-        <title>JSP Page</title>
+        <title>About</title>
     </head>
     <body>
         
