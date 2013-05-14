@@ -101,6 +101,28 @@ public class CategoryModel {
         return ret;
     }
     
+    public boolean addKategori(String nama) throws Exception  {
+        connectToDB();
+        String query = "INSERT INTO `category`(`name`) VALUES ('" + nama + "')";
+        int ans = statement.executeUpdate(query);
+        
+        return ans > 0;
+    }
+    
+    public boolean deleteKategori(int id) throws Exception  {
+        connectToDB();
+        String query = "DELETE FROM `category` WHERE id =" + id;
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
+    public boolean updateKategori(int id, String nama) throws Exception  {
+        connectToDB();
+        String query = "UPDATE `category` SET `name`='" + nama + "'  WHERE id=" + id;
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
     private void connectToDB() throws Exception {
         if (statement != null) {
             return;

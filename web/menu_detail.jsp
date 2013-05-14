@@ -15,8 +15,12 @@
 <div id="div_menu_detail">
     <h3><%= menu.getName() %> </h3>
     <img src="" alt="<%= menu.getName() %>" style="width: 200px; height: 300px;"/>
+    <br/>
+    <br/>
     <h4>Deskripsi</h4>
     <%= menu.getDescription() %>
+    <br/>
+    <br/>
     <h4>Harga</h4>
     <%= "Rp. " + menu.getPrice() %>
 </div>

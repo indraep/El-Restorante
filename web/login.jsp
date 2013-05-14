@@ -49,37 +49,21 @@
         } else if (status == null || status.length() == 0) {
             out.println("<script>alert('Harap lengkapi status Anda');</script>");
         } else {
-            //out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
-            if (nama == null || nama.length() == 0) {
-                out.println("<script>alert('Harap lengkapi nama Anda!');</script>");
-            } else if (username == null || username.length() == 0) {
-                out.println("<script>alert('Harap lengkapi username Anda');</script>");
-            } else if (password == null || password.length() == 0) {
-                out.println("<script>alert('Harap lengkapi password Anda');</script>");
-            } else if (email == null || email.length() == 0) {
-                out.println("<script>alert('Harap lengkapi email Anda');</script>");
-            } else if (alamat == null || alamat.length() == 0) {
-                out.println("<script>alert('Harap lengkapi alamat Anda');</script>");
-            } else if (birthday == null || birthday.length() == 0) {
-                out.println("<script>alert('Harap lengkapi birthday Anda');</script>");
-            } else if (status == null || status.length() == 0) {
-                out.println("<script>alert('Harap lengkapi status Anda');</script>");
+
+            out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
+            User user2 = new User(nama, username, password, alamat, email, birthday, status);
+
+            int bedaUsia = Integer.parseInt(user2.getUsia());
+            out.println(bedaUsia);
+
+            if (bedaUsia < 0) {
+                out.println("<script>alert('Usia Anda melebihi batas normal');</script>");
             } else {
-                out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
-                User user2 = new User(nama, username, password, alamat, email, birthday, status);
-
-                int bedaUsia = Integer.parseInt(user2.getUsia());
-                out.println(bedaUsia);
-
-                if (bedaUsia < 0) {
-                    out.println("<script>alert('Usia Anda melebihi batas normal');</script>");
+                boolean registered = userModel2.register(nama, username, password, email, alamat, birthday, status);
+                if (registered) {
+                    out.println("<script>alert('Data Anda berhasil disimpan!');</script>");
                 } else {
-                    boolean registered = userModel2.register(nama, username, password, email, alamat, birthday, status);
-                    if (registered) {
-                        out.println("<script>alert('Data Anda berhasil disimpan!');</script>");
-                    } else {
-                        out.println("<script>alert('Username sudah ada!');</script>");
-                    }
+                    out.println("<script>alert('Username sudah ada!');</script>");
                 }
             }
         }
@@ -101,8 +85,8 @@
                 </td>
             </tr>
             <tr id ="login">
-                <td width="80%">
-                    Welcome to El-Restorante
+                <td>
+                    <jsp:include page ='slider.jsp' flush = 'true' />
                 </td>
                 <td>
                     <jsp:include page = 'loginregister.jsp' flush = 'true' />
