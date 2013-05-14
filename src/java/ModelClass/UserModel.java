@@ -32,11 +32,11 @@ public class UserModel {
         while (resultSet.next()) {
             String nama = resultSet.getObject(1).toString();
             String username = uname;
-            String password = resultSet.getObject(2).toString();
+            String password = resultSet.getObject(3).toString();
             String alamat = resultSet.getObject(4).toString();
             String email = resultSet.getObject(5).toString();
-            String birthDate = "";
-            String bio = "";
+            String birthDate = resultSet.getObject(6).toString();
+            String bio = resultSet.getObject(7).toString();
             ret = new User(nama, username, password, alamat, email, birthDate, bio);
         }
 
@@ -57,6 +57,22 @@ public class UserModel {
         int res = statement.executeUpdate(que);
         return true;
     }
+    
+    @SuppressWarnings("empty-statement")
+     public boolean update(String nama, String username, String password, String email, String alamat, String birth, String status, int ubah) throws Exception {
+        connectToDB();
+       
+        String que = "";
+        if (ubah == 0)
+            que = "UPDATE `user` set `nama`= '" + nama + "',`username`='" + username + "',`alamat`='" + alamat + "',`email`='" + email + "',`birth_date`='" + birth + "',`bio`='" + status + "' where username='"+ username + "'";
+        else 
+            que = "UPDATE `user` set `nama`= '" + nama + "',`username`='" + username + "',`password`=md5('"+password+"'), `alamat`='" + alamat + "',`email`='" + email + "',`birth_date`='" + birth + "',`bio`='" + status + "' where username='"+ username + "'";
+        
+        int res = statement.executeUpdate(que);
+        
+        return res > 0;
+    }
+    
 
     public User getUserByUsername(String uname) throws Exception {
         connectToDB();
@@ -69,17 +85,17 @@ public class UserModel {
         while (resultSet.next()) {
             String nama = resultSet.getObject(1).toString();
             String username = uname;
-            String password = resultSet.getObject(2).toString();
+            String password = resultSet.getObject(3).toString();
             String alamat = resultSet.getObject(4).toString();
             String email = resultSet.getObject(5).toString();
-            String birthDate = "";
-            String bio = "";
+            String birthDate = resultSet.getObject(6).toString();
+            String bio = resultSet.getObject(7).toString();
             ret = new User(nama, username, password, alamat, email, birthDate, bio);
         }
 
         return ret;
     }
-
+    
     private void connectToDB() throws Exception {
         if (statement != null) {
             return;

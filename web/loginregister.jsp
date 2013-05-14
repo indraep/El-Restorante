@@ -58,7 +58,7 @@
                     Email:
                 </td>
                 <td>
-                    <input type="text" name="emailreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
+                    <input type="email" name="emailreg" style="border: 1px solid #fb8200; background: #ffffdf; color: #111111; font-size: 1em;" />
                 </td>
             </tr>
             <tr>

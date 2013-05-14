@@ -15,7 +15,6 @@
 <%
     UserModel userModel = new UserModel();
     UserModel userModel2 = new UserModel();
-    if (request.getParameter("register") != null) {
     String reg = request.getParameter("register");
     
     if (reg == null) {

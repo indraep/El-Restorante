@@ -37,7 +37,7 @@
                             <div class="triangle"></div>
                             <ul class="dropdown_user">
                                 <% if (name != null) { %>
-                                    <li><a class="edit_anchor" href ="edit.jsp">Edit Profile</a></li>
+                                    <li><a class="edit_anchor" href ="view.jsp">Edit Profile</a></li>
                                     <li><a class="edit_anchor" href ="orderhistory.jsp">View History</a></li>
                                 <% } %>
                                 <li><a class="edit_anchor" href ="aboutus.jsp">About</a></li>
