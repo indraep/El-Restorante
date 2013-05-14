@@ -17,7 +17,7 @@ create table message (
 	date date not null,
 	time time not null,
 	username varchar(50) not null,
-	foreign key (username) references user (username)
+	foreign key (username) references user (username) on update cascade on delete cascade
 );
 
 create table order_list (
@@ -28,7 +28,7 @@ create table order_list (
 	username varchar(50) not null,
 	total_biaya int not null,
 	addition text,
-	foreign key (username) references user (username)
+	foreign key (username) references user (username) on update cascade on delete cascade
 );
 
 create table order_detail (
@@ -37,7 +37,7 @@ create table order_detail (
 	no int not null,
 	quantity int not null,
 	primary key (id_order, no),
-	foreign key (id_order) references order_list (id)
+	foreign key (id_order) references order_list (id) on update cascade on delete cascade
 );
 
 
@@ -53,7 +53,7 @@ create table menu (
 	description text not null,
 	price int not null,
 	image longblob,
-	foreign key (category_id) references category (id)
+	foreign key (category_id) references category (id) on update cascade on delete cascade
 );
 
 
