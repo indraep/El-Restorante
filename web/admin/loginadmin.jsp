@@ -29,7 +29,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type="image" name="logbutton" value="login" src="assets/login.png" />
+                    <input type="image" name="logbutton" value="login" src="../assets/login.png" />
                     <input type="hidden" name="logbutton" value="login" />
                 </td>
             </tr>

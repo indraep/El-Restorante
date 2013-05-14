@@ -37,6 +37,28 @@ public class MenuModel {
         return ret;
     }
     
+    public boolean addMenu(String kategori, String nama, String harga, String deskripsi) throws Exception {
+        connectToDB();
+        String query = "INSERT INTO `menu`(`category_id`, `name`, `description`, `price`) VALUES ('" + kategori + "','" + nama + "','" + deskripsi + "'," + harga + ")";
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
+    public boolean updateMenu(String kategori, String nama, String harga, String deskripsi, int id) throws Exception {
+        connectToDB();
+        
+        String query = "UPDATE `menu` SET `category_id`='" + kategori + "',`name`= '" + nama + "',`description`='" + deskripsi + "',`price`=" + harga + " WHERE id = " + id;
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
+    public boolean deleteMenu(String id) throws Exception {
+        connectToDB();
+        String query = "DELETE FROM `menu` WHERE id=" + id;
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
     private void connectToDB() throws Exception {
         if (statement != null) {
             return;
