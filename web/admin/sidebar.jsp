@@ -20,7 +20,7 @@
 </script>
 
 <div id="sidebar">
-    <h4>Category</h4>
+    <img src="../assets/category.png"/>
 
     <%
         CategoryModel categoryModel = new CategoryModel();

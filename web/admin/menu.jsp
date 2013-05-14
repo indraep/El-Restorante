@@ -23,7 +23,7 @@
                 </div>
             </td>
             <td>
-                <div style="width: 130px; height: 130px; background-image: url(../assets/description_bg.png)">
+                <div style="width: 130px; height: 130px; background-image: url(../assets/description_bg2.png)">
                     <center><a href="<%= "show_menu_detail.jsp?id=" + menu.getId() %>" style="color: black"><%= menu.getName() %></a><br>
                     <%= menu.getDescription().length() <= 40 ? menu.getDescription() : menu.getDescription().substring(0, 40) + "..." %><br>
                     </center>

@@ -125,7 +125,8 @@ root {
 
 #div_menu_detail {
     height: 800px;
-    background-color: red;
+    background-image: url(../assets/bg_home.png);
+    margin: 0 auto;
 }
 
 #order:hover {
