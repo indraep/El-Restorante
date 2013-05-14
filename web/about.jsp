@@ -8,30 +8,35 @@
 <!DOCTYPE html>
 <div id="about">
     <center><h2>El-Restorante adalah proyek website produksi Galaksi 2013</h2></center>
-    <center><img src ="assets/galaksi.jpg"/></center>
+    <br/>
+    <br/>
+    <center><img src ="assets/galaksi.png"/></center>
+    <br/>
+    <br/>
+    <br/>
     <center>
         <table>
             <tr>
                 <td style='padding: 20px'>
-            <center>Berty Chrismartin Lumban Tobing</center>
+            <center><h3>Berty Chrismartin Lumban Tobing</h3></center>
             </td>
             <td style='padding: 20px'>
-            <center>Indra Eka Prasetya</center>
+            <center><h3>Indra Eka Prasetya</h3></center>
             </td>
             <td style='padding: 20px'>
-            <center>Rizal Bahriawan</center>
+            <center><h3>Rizal Bahriawan</h3></center>
             </td>
             </tr>
             <tr >
                 <td style='padding: 20px'>
-                    <img src ="assets/gw.jpg" width="220px" height="300px"/>
-                </td>
-                <td style='padding: 20px' >
-                    <img src ="assets/indra.JPG" width="220px" height="300px"/>
-                </td>
-                <td style='padding: 20px'>
-                    <img src ="assets/capture.jpg" width="220px" height="300px"/>
-                </td>
+            <center><img src ="assets/gw.jpg" width="220px" height="300px"/></center>
+            </td>
+            <td style='padding: 20px' >
+            <center><img src ="assets/indra.JPG" width="220px" height="300px"/></center>
+            </td>
+            <td style='padding: 20px'>
+            <center><img src ="assets/capture.jpg" width="220px" height="300px"/></center>
+            </td>
             </tr>
         </table>
     </center>

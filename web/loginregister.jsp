@@ -30,7 +30,8 @@
             </tr>
             <tr>
                 <td>
-                    <button type="submit"><img src ="assets/login.png" alt="Login" id ="logbutton"/></button>
+                    <input type="image" name="logbutton" value="login" src="assets/login.png" />
+                    <input type="hidden" name="logbutton" value="login" />
                 </td>
             </tr>
         </table>
@@ -103,8 +104,8 @@
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="register"/>
-                    <img src ="assets/register.png" id ="regbutton"/>
+                    <input type="image" name="regbutton" value="register" src="assets/register.png" />
+                    <input type="hidden" name="regbutton" value="register" />
                 </td>
             </tr>
         </table>

@@ -15,7 +15,7 @@
         String pencet = request.getParameter("hi");
         if (pencet != null) {
             String nama = request.getParameter("name");
-            String birthdate = request.getParameter("birthdate");
+            String birthdate = request.getParameter("hidbirt");
             String email = request.getParameter("email");
             String address = request.getParameter("address");
             String bio = request.getParameter("bio");
@@ -32,16 +32,16 @@
                 out.println("<script>alert('Password tidak sesuai!');</script>");
                 response.sendRedirect("edit.jsp");
             } else {
-
+                out.println(nama + " " + username + " " + password + " " + email + " " + address + " " + birthdate + " " + bio);
                 boolean udah = false;
                 if ((password == null || password.length() == 0)) {
                     udah = model.update(nama, username, password, email, address, birthdate, bio, 0);
                 } else {
-                    if (password == confirmpass)
+                    if (password.equals(confirmpass))
                         udah = model.update(nama, username, password, email, address, birthdate, bio, 1);
                     
                 }
-
+                
                 if (!udah) {
                     out.println("<script>alert('Password tidak sesuai!');</script>");
                     response.sendRedirect("edit.jsp");
@@ -94,11 +94,14 @@
                                 </tr>
                                 <tr>
                                     <td>Usia:</td>
-                                    <td colspan="2"><input type="number" name="age" value ="<% out.println(a.getUsia());%>"></td>
+                                    <td colspan="2"><input type="text" name="age" value ="<% out.println(a.getUsia());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"><input type="date" name="birthdate" value ="<% out.println(a.getBirthDate());%>"></td>
+                                    <td colspan="2"><input type="date" name="birthdate" value ="<%= a.getBirthDate() %>">
+                                    <input type="hidden" name="hidbirt" value="<%= a.getBirthDate()%>"/>
+                                    </td>
+                                    
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
@@ -156,9 +159,9 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <input type="submit" name="ganti" value="Save Changes"/>
+                                        
+                                        <input type="image" name="ganti" value="login" src="assets/savechanges.png" id ="logbutton" />
                                         <input type="hidden" name="hi" value="hii"/>
-                                        <a href="#"><img src="assets/savechanges.png" id ="logbutton"/></a></td>
                                     <td><a href="view.jsp"><img src="assets/cancel.png" id ="logbutton"/></a></td>
                                 </tr>
                                 <br />
