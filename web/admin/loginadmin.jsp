@@ -7,7 +7,6 @@
 <%@page import="ModelClass.UserModel"%>
 --%>
 <div id ="loginadmin">
-    <strong>Login</strong>
     <form action="login.jsp" method="post">
         <table>
             <tr>

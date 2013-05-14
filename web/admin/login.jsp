@@ -54,7 +54,8 @@
             </tr>
             <tr id ="login">
                 <td>
-            <center><h3>ADMIN</h3></center>
+            <center><img src ="../assets/company.png"/></center>
+            <br/>
             <center><jsp:include page = 'loginadmin.jsp' flush = 'true' /></center>
         </td>
     </tr>
