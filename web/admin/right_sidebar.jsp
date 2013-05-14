@@ -18,5 +18,5 @@
     <a class="category" href="viewaddkategori.jsp">Tambah Kategori</a><br/>
     <a class="category" href="vieweditkategori.jsp">Ubah Kategori</a><br/>
     <a class="category" href="view.jsp">Edit Profile</a><br/>
-    <a class="category" href="index.jsp">Melihat History Penjualan</a><br/>
+    <a class="category" href="orderhistory.jsp">Melihat History Penjualan</a><br/>
 </div>

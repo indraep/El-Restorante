@@ -4,6 +4,7 @@
  */
 package ModelClass;
 
+import Bean.Pesanan;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -65,6 +67,50 @@ public class PesananModel {
         statement.executeUpdate(query);
         
         return kodePesanan;
+    }
+    
+    public ArrayList<Pesanan> history(String username, String param) throws Exception {
+        connectToDB();
+        
+        String query = "SELECT * FROM `order_list` WHERE username='" + username+"' ORDER BY " + param;
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        
+        ArrayList<Pesanan> ret = new ArrayList<Pesanan>();
+        while (resultSet.next()) {
+            int id = Integer.parseInt(resultSet.getObject(1).toString());
+            String kode = resultSet.getObject(2).toString();
+            String date = resultSet.getObject(3).toString();
+            String time = resultSet.getObject(4).toString();
+            int total = Integer.parseInt(resultSet.getObject(6).toString());
+            String add = "";
+            if (resultSet.getObject(7) != null)
+                add = resultSet.getObject(7).toString();
+            ret.add(new Pesanan(id, kode, date, time, username, total, add));
+        }
+        return ret;
+    }
+    
+    public ArrayList<Pesanan> cari(String param) throws Exception {
+        connectToDB();
+        String query = "SELECT * FROM `order_list` ORDER BY " + param;
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        
+        ArrayList<Pesanan> ret = new ArrayList<Pesanan>();
+        while (resultSet.next()) {
+            int id = Integer.parseInt(resultSet.getObject(1).toString());
+            String kode = resultSet.getObject(2).toString();
+            String date = resultSet.getObject(3).toString();
+            String time = resultSet.getObject(4).toString();
+            String username = resultSet.getObject(5).toString();
+            int total = Integer.parseInt(resultSet.getObject(6).toString());
+            String add = "";
+            if (resultSet.getObject(7) != null)
+                add = resultSet.getObject(7).toString();
+            ret.add(new Pesanan(id, kode, date, time, username, total, add));
+        }
+        return ret;
     }
     
     private void connectToDB() throws Exception {
