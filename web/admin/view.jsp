@@ -18,7 +18,7 @@
         <title>Profile</title>
     </head>
     <body>
-        
+
         <table id="mainTable">
             <tr>
                 <td colspan="3">
@@ -30,9 +30,7 @@
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
-                   
-                        <jsp:include page = 'viewprofile.jsp' flush = 'true' />
-                 
+                    <jsp:include page = 'viewprofile.jsp' flush = 'true' />
                 </td>
                 <td width="150px">
                     <jsp:include page = 'right_sidebar.jsp' flush = 'true' />

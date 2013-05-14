@@ -4,6 +4,13 @@
     Author     : indraep
 --%>
 
+<%@page import="java.io.ByteArrayOutputStream"%>
+<%@page import="java.awt.image.DataBufferByte"%>
+<%@page import="java.awt.image.WritableRaster"%>
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.awt.image.BufferedImage"%>
+<%@page import="java.io.File"%> 
+<%@page import="java.awt.Image"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +20,12 @@
     </head>
     <body>
         <%
-        <img src ="utilities/retrieve_menu_image?id=20" />
+            File fnew=new File("/assets/photo.png");
+            BufferedImage originalImage=ImageIO.read(fnew);
+            ByteArrayOutputStream baos=new ByteArrayOutputStream();
+            ImageIO.write(originalImage, "png", baos );
+            byte[] b=baos.toByteArray();
+            out.print(b.toString());
+        %>
     </body>
 </html>

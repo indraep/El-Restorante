@@ -72,6 +72,8 @@
     function order() {
         var username = $.cookie("username");
         var totalBiaya = document.getElementById("totalBiaya").innerHTML;
+        var addition = document.getElementById("addition").value;
+        alert("ada juga = " + addition);
         var pesanan = "";
         var temp = getOrder();
         var c = temp.split("-");
@@ -91,7 +93,8 @@
             data:       {
                 "username": username,
                 "pesanan": pesanan,
-                "total_biaya": totalBiaya
+                "total_biaya": totalBiaya,
+                "addition": addition
             },
             success:    function(msg) {
                 msg = msg.trim();
@@ -122,6 +125,9 @@
     <table id="detail_pesanan" border="1">
         <% out.print("<script>isiDetailPesanan();</script>"); %>
     </table>
+    <br />
+    <strong>addition</strong> <br/>
+    <textarea id="addition" type="text" rows="5" cols="50" style="resize: none">Masukkan tambahan terhadap pesanan anda (misal: 'Nasi gorengnya tidak pedes')</textarea>
     <br/>
     <br/>
     <a href="javascript:order()" ><img alt="Order" src="assets/order.png" /></a>

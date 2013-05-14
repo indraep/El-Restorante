@@ -52,7 +52,7 @@ public class UserModel {
         while (resultSet.next()) {
             return false;
         }
-        String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "')";
+            String que = "INSERT INTO `user`(`nama`, `username`, `password`, `alamat`, `email`, `birth_date`, `bio`) VALUES ('" + nama + "','" + username + "',md5('" + password + "'),'" + alamat + "','" + email + "','" + birth + "','" + status + "')";
         
         int res = statement.executeUpdate(que);
         return true;

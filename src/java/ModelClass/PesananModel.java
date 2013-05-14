@@ -22,7 +22,7 @@ import java.util.Date;
 public class PesananModel {
     private Statement statement;
     
-    public String buatPesanan(String username, String totalBiaya, String pesanan) throws Exception {
+    public String buatPesanan(String username, String totalBiaya, String pesanan, String addition) throws Exception {
         connectToDB();
         
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -31,7 +31,7 @@ public class PesananModel {
         String sdate = curTime.split(" ")[0];
         String stime = curTime.split(" ")[1];
         
-        String query = "insert into order_list(date, time, username, total_biaya) values ('" + sdate + "', '" + stime + "', '" + username + "', '" + totalBiaya + "')";
+        String query = "insert into order_list(date, time, username, total_biaya, addition) values ('" + sdate + "', '" + stime + "', '" + username + "', '" + totalBiaya + "', '" + addition + "')";
         statement.executeUpdate(query);
         
         query = "select max(id) from order_list";

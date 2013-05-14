@@ -67,24 +67,26 @@
         User a = usermodel.getUserByUsername(name);
     %>
     <div id="userdata">
-        <form action="editprofile.jsp" method="post">
-            <table>
-                <tr>
-                    <td>  
-                        <div id="photo">
-                            <img src="assets/photo.png"/><br />
-                            Change Profile Picture
-                            <br/>
-                            <form action="UploadServlet" method="post"
-                                  enctype="multipart/form-data">
-                                <input type="file" name="file" size="15" />
-                                <br />
-                                <a href="#"><img src="assets/upload.png"/></a>
-                            </form>
-                        </div>
-                    </td>
-                    <td style="padding-left: 30px">
-                        <div id= "userdata">
+        <table>
+            <tr>
+                <td>  
+                    <div id="photo">
+                        <% String src = "admin/utilities/retrieve_user_image.jsp?username=" + a.getUsername(); %>
+                        <img src="<%= src %>" width="203px" height="226px" alt="photo"/><br />
+                        Change Profile Picture
+                        <br/>
+                        <form action="admin/utilities/upload_user_image.jsp" method="post"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="username" value="<%= a.getUsername()%>" />
+                            <input type="file" name="file" size="15" />
+                            <br />
+                            <input type="image" src="assets/upload.png"/>
+                        </form>
+                    </div>
+                </td>
+                <td style="padding-left: 30px">
+                    <div id= "userdata">
+                        <form action="editprofile.jsp" method="post">
                             <table>
                                 <tr>
                                     <td colspan="2"><strong>Biodata</strong></td>
@@ -106,7 +108,7 @@
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
-                                    <td colspan="2"><input type="text" name="address" value ="<% out.println(a.getNama());%>"></td>
+                                    <td colspan="2"><input type="text" name="address" value ="<% out.println(a.getAlamat());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Hobi:</td>
@@ -133,7 +135,6 @@
                                     <td>Lainnya:</td>
                                     <td colspan="2"><input type="text" name="fav_other"></td>
                                 </tr>
-                                </form>
                                 <br />
 
                                 <tr>
@@ -167,10 +168,10 @@
                                 </tr>
                                 <br />
                             </table>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>

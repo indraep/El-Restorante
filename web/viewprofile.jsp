@@ -26,7 +26,8 @@
             <tr>
                 <td>  
                     <div id="photo">
-                        <img src="assets/photo.png"/><br />
+                        <% String src = "admin/utilities/retrieve_user_image.jsp?username=" + user.getUsername(); %>
+                        <img src="<%= src %>" width="203px" height="226px" alt="photo"/><br />
                     </div>
                 </td>
                 <td style="padding-left: 30px">

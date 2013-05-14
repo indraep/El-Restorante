@@ -37,17 +37,18 @@
                 if ((password == null || password.length() == 0)) {
                     udah = model.update(nama, username, password, email, address, birthdate, bio, 0);
                 } else {
-                    if (password.equals(confirmpass))
+                    if (password.equals(confirmpass)) {
                         udah = model.update(nama, username, password, email, address, birthdate, bio, 1);
-                    
+                    }
+
                 }
-                
+
                 if (!udah) {
                     out.println("<script>alert('Password tidak sesuai!');</script>");
                     response.sendRedirect("edit.jsp");
-                }
-                else
+                } else {
                     response.sendRedirect("view.jsp");
+                }
             }
         }
 
@@ -66,24 +67,26 @@
         User a = usermodel.getUserByUsername(name);
     %>
     <div id="userdata">
-        <form action="editprofile.jsp" method="post">
-            <table>
-                <tr>
-                    <td>  
-                        <div id="photo">
-                            <img src="../assets/photo.png"/><br />
-                            Change Profile Picture
-                            <br/>
-                            <form action="UploadServlet" method="post"
-                                  enctype="multipart/form-data">
-                                <input type="file" name="file" size="15" />
-                                <br />
-                                <a href="#"><img src="../assets/upload.png"/></a>
-                            </form>
-                        </div>
-                    </td>
-                    <td style="padding-left: 30px">
-                        <div id= "userdata">
+        <table>
+            <tr>
+                <td>  
+                    <div id="photo">
+                        <% String src = "admin/utilities/retrieve_user_image.jsp?username=" + a.getUsername(); %>
+                        <img src="<%= src %>" width="203px" height="226px" alt="photo"/><br />
+                        Change Profile Picture
+                        <br/>
+                        <form action="utilities/upload_user_image.jsp" method="post"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="username" value="<%= a.getUsername()%>" />
+                            <input type="file" name="file" size="15" />
+                            <br />
+                            <a href="#"><img src="../assets/upload.png"/></a>
+                        </form>
+                    </div>
+                </td>
+                <td style="padding-left: 30px">
+                    <div id= "userdata">
+                        <form action="editprofile.jsp" method="post">
                             <table>
                                 <tr>
                                     <td colspan="2"><strong>Biodata</strong></td>
@@ -98,14 +101,14 @@
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"><input type="date" name="birthdate" value ="<%= a.getBirthDate() %>">
-                                    <input type="hidden" name="hidbirt" value="<%= a.getBirthDate()%>"/>
+                                    <td colspan="2"><input type="date" name="birthdate" value ="<%= a.getBirthDate()%>">
+                                        <input type="hidden" name="hidbirt" value="<%= a.getBirthDate()%>"/>
                                     </td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
-                                    <td colspan="2"><input type="text" name="address" value ="<% out.println(a.getNama());%>"></td>
+                                    <td colspan="2"><input type="text" name="address" value ="<% out.println(a.getAlamat());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Hobi:</td>
@@ -132,7 +135,6 @@
                                     <td>Lainnya:</td>
                                     <td colspan="2"><input type="text" name="fav_other"></td>
                                 </tr>
-                                </form>
                                 <br />
 
                                 <tr>
@@ -159,17 +161,17 @@
                                 <tr>
                                     <td></td>
                                     <td  style="padding-top: 20px">
-                                        
+
                                         <input type="image" name="ganti" value="login" src="../assets/savechanges.png" id ="logbutton" />
                                         <input type="hidden" name="hi" value="hii"/>
                                     <td style="padding-top: 20px"><a href="view.jsp"><img src="../assets/cancel.png" id ="logbutton"/></a></td>
                                 </tr>
                                 <br />
                             </table>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
