@@ -15,14 +15,9 @@
 <%
     UserModel userModel = new UserModel();
     UserModel userModel2 = new UserModel();
-<<<<<<< HEAD
-    
-    String reg = request.getParameter("register");
-=======
 
     String reg = request.getParameter("register");
 
->>>>>>> f078b5f0c556a7c961d6d9a2d20e34d891f991b1
     if (reg == null) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -33,10 +28,6 @@
                 response.addCookie(cookie);
                 response.sendRedirect("index.jsp");
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> f078b5f0c556a7c961d6d9a2d20e34d891f991b1
         }
     } else {
         String nama = request.getParameter("namereg");
@@ -62,7 +53,6 @@
         } else if (status == null || status.length() == 0) {
             out.println("<script>alert('Harap lengkapi status Anda');</script>");
         } else {
-<<<<<<< HEAD
             //out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
             if (nama == null || nama.length() == 0) {
                 out.println("<script>alert('Harap lengkapi nama Anda!');</script>");
@@ -81,34 +71,29 @@
             } else {
                 out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
                 User user2 = new User(nama, username, password, alamat, email, birthday, status);
-=======
->>>>>>> f078b5f0c556a7c961d6d9a2d20e34d891f991b1
 
-            out.println(nama + " " + username + " " + password + " " + alamat + " " + email + " " + birthday + " " + status);
-            User user2 = new User(nama, username, password, alamat, email, birthday, status);
+                int bedaUsia = Integer.parseInt(user2.getUsia());
+                out.println(bedaUsia);
 
-            int bedaUsia = Integer.parseInt(user2.getUsia());
-            out.println(bedaUsia);
-
-            if (bedaUsia < 0) {
-                out.println("<script>alert('Usia Anda melebihi batas normal');</script>");
-            } else {
-                boolean registered = userModel2.register(nama, username, password, email, alamat, birthday, status);
-                if (registered) {
-                    out.println("<script>alert('Data Anda berhasil disimpan!');</script>");
+                if (bedaUsia < 0) {
+                    out.println("<script>alert('Usia Anda melebihi batas normal');</script>");
                 } else {
-                    out.println("<script>alert('Username sudah ada!');</script>");
+                    boolean registered = userModel2.register(nama, username, password, email, alamat, birthday, status);
+                    if (registered) {
+                        out.println("<script>alert('Data Anda berhasil disimpan!');</script>");
+                    } else {
+                        out.println("<script>alert('Username sudah ada!');</script>");
+                    }
                 }
             }
         }
-    }
 
 %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style/el_restorante_style.css">
-        <title>JSP Page</title>
+        <title>Login/Register</title>
     </head>
     <body>
 

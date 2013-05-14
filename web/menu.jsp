@@ -39,7 +39,7 @@
             </td>
             <td>
                 <div style="width: 130px; height: 30px; background-image: url(assets/price_bg.png)">
-                    <center>Rp.<%= menu.getPrice() %></center>
+                    <center><strong>Rp.<%= menu.getPrice() %></strong></center>
                 </div>
             </td>
         </tr>
