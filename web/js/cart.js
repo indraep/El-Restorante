@@ -1,6 +1,26 @@
 $(document).ready(function() {
+<<<<<<< HEAD
+    printCart(); 
+    alert(getOrder());
+=======
     printCart();
+>>>>>>> 525fabb5d1f1c89f1b7c8f5575e20c34adb92d27
 });
+
+function getOrder() {
+    var c = $.cookie("cart");
+    if (c == undefined || c == "null" || c == "") {
+        return null;
+    }
+    
+    var temp = c.split("-");
+    var isi = new Array(temp.length)(2);
+    for (var i = 0; i < temp.length; i++) {
+        isi[i][0] = getId(temp[i]);
+        isi[i][1] = getName(temp[i]);
+    }
+    return isi;
+}
 
 function getName(content) {
     content = content.substring(1, content.length - 1);
