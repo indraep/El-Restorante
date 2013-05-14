@@ -7,7 +7,8 @@ create table user (
 	alamat text not null,
 	email varchar(50) not null,
 	birth_date date,
-	bio text
+	bio text,
+	image longblob
 );
 
 create table message (
@@ -51,6 +52,7 @@ create table menu (
 	name text not null,
 	description text not null,
 	price int not null,
+	image longblob,
 	foreign key (category_id) references category (id)
 );
 
