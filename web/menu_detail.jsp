@@ -14,7 +14,8 @@
 
 <div id="div_menu_detail">
     <h3><%= menu.getName() %> </h3>
-    <img src="" alt="<%= menu.getName() %>" style="width: 200px; height: 300px;"/>
+    <% String src = "admin/utilities/retrieve_menu_image.jsp?id=" + menu.getId(); %>
+    <img src="<%= src %>" alt="<%= menu.getName() %>" style="width: 200px; height: 300px;"/>
     <br/>
     <br/>
     <h4>Deskripsi</h4>

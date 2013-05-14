@@ -21,10 +21,10 @@ public class UserModel {
 
     private Statement statement;
 
-    public User login(String uname, String pass) throws Exception {
+    public User login(String uname, String pass, int role) throws Exception {
         connectToDB();
 
-        String query = "select * from user where username = '" + uname + "' AND password = md5('" + pass + "')";
+        String query = "select * from user where username = '" + uname + "' AND password = md5('" + pass + "') AND role = " + role;
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData metaData = resultSet.getMetaData();
 

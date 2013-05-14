@@ -8,8 +8,8 @@
 <%@page import="ModelClass.CategoryModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <%
-    
     Cookie[] cookies = request.getCookies();
     String usernames = null;
     if (cookies != null && cookies.length != 0) {
@@ -31,7 +31,7 @@
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username != null && password != null && username.length() > 0 && password.length() > 0) {
-            User user = userModel.login(username, password);
+            User user = userModel.login(username, password, 0);
             if (user != null) {
                 Cookie cookie = new Cookie("username", username);
                 response.addCookie(cookie);
