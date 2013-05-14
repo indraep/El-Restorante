@@ -9,7 +9,7 @@
 
 
 <div id ="loginregister">
-    <p><h2 style="color: orangered">El-Restorante</h2></p>
+    <img src ="assets/company.png"/>
     <br/>
     <h3>Login</h3>
     <form action="login.jsp" method="post">
