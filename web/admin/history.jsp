@@ -75,6 +75,7 @@
                     out.print("</table>");
                     out.print("</section>");
                 %>
+            </td>
         </tr>
         <tr>
             <td>
