@@ -16,49 +16,51 @@
                 <br/>
                 <br/>
             </td>
-            <td><h3>Urutkan berdasar:</h3></td>
         </tr>
         <tr>
             <td width ="600px">
                 <%
                     String param = request.getParameter("sorting");
-                    if (param == null) param = "1";
-                            
+                    if (param == null) {
+                        param = "1";
+                    }
+
                     String order = "", cetak = "";
-                    
+
                     if (param.equals("2")) {
                         order = "total_biaya";
                         cetak = "Total Biaya";
-                    }
-                    else if (param.equals("3")) {
+                    } else if (param.equals("3")) {
                         order = "date";
                         cetak = "Tanggal";
-                    }
-                    else if (param.equals("4")) {
+                    } else if (param.equals("4")) {
                         order = "username";
                         cetak = "Username";
-                    }
-                    else {
+                    } else {
                         order = "id";
                         cetak = "ID";
                     }
 
-                    out.print("<h3>Diurutkan berdasarkan " + cetak + "</h3>");
+                    out.print("<section class='container'>");
+                    out.print("<h2>Diurutkan berdasarkan " + cetak + "</h2>");
                     out.print("<br/>");
                     out.print("<table border='1'>");
+                    out.print("<thead>");
                     out.print("<tr>");
-                    out.print("<td>No</td>");
-                    out.print("<td>ID Order</td>");
-                    out.print("<td>Total Harga</td>");
-                    out.print("<td>Tanggal Pemesanan</td>");
-                    out.print("<td>Username</td>");
+                    out.print("<td><strong>No</strong></td>");
+                    out.print("<td><strong>ID Order</strong></td>");
+                    out.print("<td><strong>Total Harga</strong></td>");
+                    out.print("<td><strong>Tanggal Pemesanan</strong></td>");
+                    out.print("<td><strong>Username</strong></td>");
                     out.print("</tr>");
+                    out.print("</thead>");
 
                     PesananModel pes = new PesananModel();
                     ArrayList<Pesanan> pesanan = pes.cari(order);
 
                     int N = pesanan.size();
                     if (N > 0) {
+                        out.print("<tbody>");
                         for (int i = 0; i < N; i++) {
                             out.print("<tr>");
                             out.print("<td>" + (i + 1) + "</td>");
@@ -68,14 +70,18 @@
                             out.print("<td>" + pesanan.get(i).getUsername() + "</td>");
                             out.print("</tr>");
                         }
+                        out.print("</tbody>");
                     }
                     out.print("</table>");
+                    out.print("</section>");
                 %>
-            </td>
-
+        </tr>
+        <tr>
             <td>
+                <br/>
+                <br/>
                 <form action="orderhistory.jsp?sort=" + <%= request.getParameter("sorting")%> >
-                      <select name ="sorting">
+                    <select name ="sorting">
                         <option value="1">ID Order</option>
                         <option value="2">Total Harga</option>
                         <option value="3">Tanggal Pemesanan</option>
@@ -87,5 +93,6 @@
                 </form>
             </td>
         </tr>
+
     </table>
 </div>
