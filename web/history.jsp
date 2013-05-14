@@ -36,19 +36,22 @@
                     String param = request.getParameter("sorting");
                     if (param == null) param = "1";
                             
-                    String order = "";
+                    String order = "", cetak = "";
                     
                     if (param.equals("2")) {
                         order = "total_biaya";
+                        cetak = "Total Biaya";
                     }
                     else if (param.equals("3")) {
                         order = "date";
+                        cetak = "Tanggal";
                     }
                     else {
                         order = "id";
+                        cetak = "ID";
                     }
                     
-                    out.print("<h3>Diurutkan berdasarkan " + order+"</h3>");
+                    out.print("<h3>Diurutkan berdasarkan " + cetak + "</h3>");
                     out.print("<br/>");
                     out.print("<table border='1'>");
                     out.print("<tr>");

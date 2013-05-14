@@ -24,19 +24,26 @@
                     String param = request.getParameter("sorting");
                     if (param == null) param = "1";
                             
-                    String order = "";
+                    String order = "", cetak = "";
                     
                     if (param.equals("2")) {
                         order = "total_biaya";
+                        cetak = "Total Biaya";
                     }
                     else if (param.equals("3")) {
                         order = "date";
+                        cetak = "Tanggal";
+                    }
+                    else if (param.equals("4")) {
+                        order = "username";
+                        cetak = "Username";
                     }
                     else {
                         order = "id";
+                        cetak = "ID";
                     }
 
-                    out.print("<h3>Diurutkan berdasarkan " + order+"</h3>");
+                    out.print("<h3>Diurutkan berdasarkan " + cetak + "</h3>");
                     out.print("<br/>");
                     out.print("<table border='1'>");
                     out.print("<tr>");
@@ -72,6 +79,7 @@
                         <option value="1">ID Order</option>
                         <option value="2">Total Harga</option>
                         <option value="3">Tanggal Pemesanan</option>
+                        <option value="4">Username</option>
                     </select>
                     <br/>
                     <br/>

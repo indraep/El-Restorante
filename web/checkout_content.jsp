@@ -70,8 +70,6 @@
     }
     
     function order() {
-        alert("ADA");
-        
         var username = $.cookie("username");
         var totalBiaya = document.getElementById("totalBiaya").innerHTML;
         var pesanan = "";
