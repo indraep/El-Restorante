@@ -1,25 +1,19 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-    printCart(); 
-    alert(getOrder());
-=======
     printCart();
->>>>>>> 525fabb5d1f1c89f1b7c8f5575e20c34adb92d27
 });
 
 function getOrder() {
     var c = $.cookie("cart");
     if (c == undefined || c == "null" || c == "") {
-        return null;
+        c = "";
     }
-    
-    var temp = c.split("-");
-    var isi = new Array(temp.length)(2);
-    for (var i = 0; i < temp.length; i++) {
-        isi[i][0] = getId(temp[i]);
-        isi[i][1] = getName(temp[i]);
-    }
-    return isi;
+    return c;
+}
+
+function getPrice(content) {
+    content = content.substring(1, content.length - 1);
+    var t = content.split(",");
+    return t[2];
 }
 
 function getName(content) {
@@ -48,8 +42,12 @@ function printCart() {
     for (i = 0; i < temp.length; i++) {
         if (isi.length > 0)
             isi += "<br />";
-
-        isi += "<p class='category'>" + getName(temp[i]) + "</p> <a style=\"margin-left: 7px;\" href=javascript:removeFromCart(" + getId(temp[i]) + ")><img src = 'assets/remove.png' id = 'order'/></a>";
+            
+        var len = 13;
+        var nama = getName(temp[i]);
+        if (nama.length > len) nama = nama.substring(0, len) + "...";
+        
+        isi += "<p class='category'>" + nama + "</p> <a style=\"margin-left: 5px;\" href=javascript:removeFromCart(" + getId(temp[i]) + ")>a</a>";
     }
 
     if (isi.length > 0) {
@@ -91,6 +89,7 @@ function removeFromCart(id) {
 function addToCart(content) {
     var id = getId(content);
     var name = getName(content);
+    var price = getPrice(content);
 
     var c = $.cookie("cart");
     if (c == undefined || c == "null" || c == "") {
@@ -108,7 +107,7 @@ function addToCart(content) {
     if (valid) {
         if (c.length > 0)
             c += "-";
-        c += "(" + id + "," + name + ")";
+        c += "(" + id + "," + name + "," + price + ")";
         $.cookie('cart', c, {path: "/"});
     }
     printCart();

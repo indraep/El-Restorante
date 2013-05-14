@@ -32,7 +32,7 @@
             <td>
                 <div style="width: 130px; height: 30px">
                     <%
-                        String link = "javascript:addToCart('(" + menu.getId() + "," + menu.getName() + ")')";
+                        String link = "javascript:addToCart('(" + menu.getId() + "," + menu.getName() + "," + menu.getPrice() + ")')";
                     %>
                     <center><a href="<%= link %>"><img src="assets/addtocart.png"/></a></center>
                 </div>

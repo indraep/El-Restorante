@@ -26,13 +26,13 @@
                 </td>
             </tr>
             <tr>
-                <td width="150px">
+                <td width="170px">
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
                     <jsp:include page = 'about.jsp' flush = 'true' />
                 </td>
-                <td width="150px">
+                <td width="170px">
                     <jsp:include page = 'right_sidebar.jsp' flush = 'true' />
                 </td>
             </tr>

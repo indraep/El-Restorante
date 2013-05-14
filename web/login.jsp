@@ -1,8 +1,4 @@
-<%-- 
-    Document   : login
-    Created on : 13 Mei 13, 10:58:17
-    Author     : Berty Tobing
---%>
+
 
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
@@ -87,6 +83,7 @@
                 }
             }
         }
+    }
 
 %>
 <html>
