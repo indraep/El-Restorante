@@ -12,7 +12,7 @@
 
 
 <div id="right_sidebar">
-    <h4>Menu Admin</h4>
+    <img src ="../assets/menuadmin.png"/>
 
     <a class="category" href="viewaddmenu.jsp">Tambah Menu</a><br/>
     <a class="category" href="viewaddkategori.jsp">Tambah Kategori</a><br/>
