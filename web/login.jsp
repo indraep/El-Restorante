@@ -9,6 +9,19 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+    
+    Cookie[] cookies = request.getCookies();
+    String usernames = null;
+    if (cookies != null && cookies.length != 0) {
+        for (int i = 0; i < cookies.length; i++)
+            if (cookies[i].getName().equals("username"))
+                usernames = cookies[i].getValue();
+    }
+    
+    if (usernames != null) {
+        response.sendRedirect("index.jsp");
+    }
+    
     UserModel userModel = new UserModel();
     UserModel userModel2 = new UserModel();
 
