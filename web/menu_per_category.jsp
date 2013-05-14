@@ -9,7 +9,6 @@
 <%@page import="ModelClass.CategoryModel"%>
 
 <div id = "daftar">
-
     <%
         CategoryModel categoryModel = new CategoryModel();
         String catId = request.getParameter("categoryId");

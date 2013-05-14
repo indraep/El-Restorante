@@ -21,4 +21,6 @@
 
 <div id="right_sidebar">
     <p><img src="assets/cart.png" width="30px" height="30px"/></p>
+    <div id="cart">
+    </div>
 </div>

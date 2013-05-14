@@ -8,7 +8,6 @@
 <%@page import="Bean.Menu"%>
 <%@page import="ModelClass.CategoryModel"%>
 <div>
-    
     <%
         int id = Integer.parseInt(request.getParameter("id"));
         Menu menu = new MenuModel().getMenuById(id);
@@ -32,7 +31,10 @@
         <tr>
             <td>
                 <div style="width: 130px; height: 30px">
-                    <center><a href="#"><img src="assets/addtocart.png"/></a></center>
+                    <%
+                        String link = "javascript:addToCart('(" + menu.getId() + "," + menu.getName() + ")')";
+                    %>
+                    <center><a href="<%= link %>"><img src="assets/addtocart.png"/></a></center>
                 </div>
             </td>
             <td>
