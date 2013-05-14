@@ -8,8 +8,8 @@
 <%@page import="ModelClass.CategoryModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <%
-    
     Cookie[] cookies = request.getCookies();
     String usernames = null;
     if (cookies != null && cookies.length != 0) {
@@ -19,6 +19,7 @@
     }
     
     if (usernames != null) {
+        out.print("<script>alert('masuk');</script>");
         response.sendRedirect("index.jsp");
     }
     
