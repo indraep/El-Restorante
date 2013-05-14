@@ -15,10 +15,10 @@
                 <h3>Order History</h3>
                 <br/>
                 <br/>
-
+            </td>
         </tr>
         <tr>
-            <td width ="600px">
+            <td width="850px">
                 <%
                     Cookie[] cookies = request.getCookies();
                     String name = null;
@@ -51,11 +51,11 @@
                         order = "id";
                         cetak = "ID";
                     }
-
+                    out.print("<center");
                     out.print("<section class='container'>");
                     out.print("<h2>Diurutkan berdasarkan " + cetak + "</h2>");
                     out.print("<br/>");
-                    out.print("<table border='1'>");
+                    out.print("<table border='1' style='background-color: orange'>");
                     out.print("<thead>");
                     out.print("<tr>");
                     out.print("<td><strong>No</strong></td>");
@@ -83,6 +83,7 @@
                     }
                     out.print("</table>");
                     out.print("</section>");
+                    out.print("</center>");
                 %>
             </td>
 

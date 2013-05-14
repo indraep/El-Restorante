@@ -18,7 +18,7 @@
             </td>
         </tr>
         <tr>
-            <td width ="600px">
+            <td width ="850px">
                 <%
                     String param = request.getParameter("sorting");
                     if (param == null) {
