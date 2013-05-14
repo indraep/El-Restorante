@@ -34,8 +34,9 @@
 %>
 
 <div id ="daftar">
-    <h3>Tambahkan menu</h3>
-
+    <h3>Ubah menu</h3>
+    <br/>
+    <br/>
     <form action="editmenu.jsp" method="post">
         <table>
             <tr>

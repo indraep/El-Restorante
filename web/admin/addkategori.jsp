@@ -27,7 +27,8 @@
 
 <div id ="daftar">
     <h3>Tambahkan kategori</h3>
-
+    <br/>
+    <br/>
     <form action="addkategori.jsp" method="post">
         <table>
             <tr>

@@ -29,7 +29,8 @@
 
 <div id ="daftar">
     <h3>Tambahkan menu</h3>
-
+    <br/>
+    <br/>
     <form action="addmenu.jsp" method="post">
         <table>
             <tr>

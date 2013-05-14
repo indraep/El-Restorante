@@ -1,9 +1,6 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-=======
     printCart(); 
     alert(getOrder());
->>>>>>> deb871b070139687cd3aba49e94acc2be2fb9aa7
     printCart();
 });
 

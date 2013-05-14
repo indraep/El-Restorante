@@ -30,7 +30,8 @@
 
 <div id ="daftar">
     <h3>Ubah kategori</h3>
-
+    <br/>
+    <br/>
     <form action="updatekategori.jsp?" method="post">
         <table>
             <tr>
