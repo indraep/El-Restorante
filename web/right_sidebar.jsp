@@ -20,7 +20,6 @@
 </script>
 
 <div id="right_sidebar">
-<<<<<<< HEAD
     <%
         String loggedOut = request.getParameter("logged_out");
         if (loggedOut != null && loggedOut.equals("true")) {
@@ -28,9 +27,8 @@
         }
     %>
     <p><img src="assets/cart.png" width="30px" height="30px"/></p>
-=======
     <center><p><img src="assets/cart.png" width="30px" height="30px"/></p></center>
->>>>>>> f078b5f0c556a7c961d6d9a2d20e34d891f991b1
+
     <div id="cart">
     </div>
 </div>
