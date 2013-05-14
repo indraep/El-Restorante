@@ -4,7 +4,7 @@
     Author     : indraep
 --%>
 
-    <%@page import="org.apache.tomcat.util.http.Cookies"%>
+<%@page import="org.apache.tomcat.util.http.Cookies"%>
 <%      
     Cookie[] cookies = request.getCookies();
     String name = null;
@@ -31,7 +31,7 @@
         <nav>
             <ul class="dropdown_user">
                 <li class="drop">
-                    <a class="drop_anchor" href="#"><%= name == null? "" : name %><img src = "assets/menu.png" /></a>
+                    <a class="drop_anchor" href="#" ><%= name == null? "" : name %><img style="margin-left: 10px" src = "assets/menu.png" /></a>
                     <div class="dropdownContain">
                         <div class="dropOut">
                             <div class="triangle"></div>

@@ -20,6 +20,12 @@
 </script>
 
 <div id="right_sidebar">
+    <%
+        String loggedOut = request.getParameter("logged_out");
+        if (loggedOut != null && loggedOut.equals("true")) {
+            out.print("<script>clearCart();</script>");
+        }
+    %>
     <p><img src="assets/cart.png" width="30px" height="30px"/></p>
     <div id="cart">
     </div>

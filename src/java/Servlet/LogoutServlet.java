@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
-
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -38,13 +37,19 @@ public class LogoutServlet extends HttpServlet {
            Cookie[] cookies = request.getCookies();
            if (cookies != null) {
                 for (int i = 0; i < cookies.length; i++) {
+                    System.out.println(cookies[i].getName());
                     if (cookies[i].getName().equals("username")) {
                         cookies[i] = new Cookie("username", null);
                         cookies[i].setMaxAge(0);
                         response.addCookie(cookies[i]);
-                        response.sendRedirect("index.jsp");
+                    }
+                    else if (cookies[i].getName().equals("cart")) {
+                        cookies[i] = new Cookie("cart", null);
+                        cookies[i].setMaxAge(0);
+                        response.addCookie(cookies[i]);
                     }
                 }
+                response.sendRedirect("index.jsp?logged_out=true");
            }
         } finally {            
             out.close();
