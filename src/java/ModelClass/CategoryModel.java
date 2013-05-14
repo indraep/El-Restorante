@@ -77,6 +77,30 @@ public class CategoryModel {
         return ret;
     }
 
+    public ArrayList<Menu> getMenuByName(String catId, int page) throws Exception  {
+        connectToDB();
+        
+        int limit = 9;
+        int offset = limit * (page - 1);
+        
+        String query = "select * from menu where name like '%" + catId + "%' limit " + (limit + 1) + " offset " + offset ;
+        ResultSet resultSet = statement.executeQuery(query);
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        ArrayList<Menu> ret = new ArrayList<Menu>();
+        
+        while (resultSet.next()) {
+            int id = Integer.parseInt(resultSet.getObject(1).toString());
+            int categoryId = Integer.parseInt(resultSet.getObject(2).toString());
+            String name = resultSet.getObject(3).toString();
+            String description = resultSet.getObject(4).toString();
+            int price = Integer.parseInt(resultSet.getObject(5).toString());
+            
+            ret.add(new Menu(id, categoryId, name, description, price));
+        }
+            
+        return ret;
+    }
+    
     private void connectToDB() throws Exception {
         if (statement != null) {
             return;
