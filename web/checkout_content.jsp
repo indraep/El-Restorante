@@ -96,7 +96,6 @@
             success:    function(msg) {
                 msg = msg.trim();
                 var confirmationCode = window.prompt("Nomor pesanan anda adalah:\n\n" + msg + "\n\nSilahkan lakukan pembayaran dengan PayBro dan masukkan kode verifikasi!");
-                alert("var = " + confirmationCode);
                 
                 // cancel or salah
                 if (confirmationCode == null || false) {
