@@ -8,6 +8,21 @@
 <%@page import="ModelClass.CategoryModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Cookie[] cookies = request.getCookies();
+    String usernames = null;
+    if (cookies != null && cookies.length != 0) {
+        for (int i = 0; i < cookies.length; i++) {
+            if (cookies[i].getName().equals("usernameadmin")) {
+                usernames = cookies[i].getValue();
+            }
+        }
+    }
+
+    if (usernames == null) {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,7 +45,13 @@
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
+<<<<<<< HEAD
                     <jsp:include page = 'viewprofile.jsp' flush = 'true' />
+=======
+
+                    <jsp:include page = 'viewprofile.jsp' flush = 'true' />
+
+>>>>>>> 0641280e6b7f41fa2efae42da6f0f5cb9294b4a1
                 </td>
                 <td width="150px">
                     <jsp:include page = 'right_sidebar.jsp' flush = 'true' />
