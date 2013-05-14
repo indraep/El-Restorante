@@ -30,7 +30,7 @@
                     <jsp:include page = 'about.jsp' flush = 'true' />
                 </td>
                 <td width="150px">
-                    <jsp:include page = 'sidebar.jsp' flush = 'true' />
+                    <jsp:include page = 'right_sidebar.jsp' flush = 'true' />
                 </td>
             </tr>
         </table>
