@@ -21,16 +21,19 @@ create table message (
 
 create table order_list (
 	id int auto_increment primary key,
+	kode_pesanan text,
 	date date not null,
 	time time not null,
 	username varchar(50) not null,
+	total_biaya int not null,
+	addition text,
 	foreign key (username) references user (username)
 );
 
 create table order_detail (
 	id_order int not null,
+	id_menu int not null,
 	no int not null,
-	addition text,
 	quantity int not null,
 	primary key (id_order, no),
 	foreign key (id_order) references order_list (id)
