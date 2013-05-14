@@ -31,7 +31,8 @@
     <%
         }
     %>
-    <p><h4>Search:</h4></p>
+    <br/>
+    <img src ="assets/search.png"/>
     <form method="get" action="searchindex.jsp"> 
         <table style="padding-left: 10px" cellpadding="0px" cellspacing="0px"> 
             <tr> 
