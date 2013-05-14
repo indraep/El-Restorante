@@ -36,7 +36,7 @@
         <table cellpadding="0px" cellspacing="0px"> 
             <tr> 
                 <td style="border-style:solid none solid solid;border-color:#ff9900;border-width:1px;">
-                    <input type="text" name="zoom_query" style="width:100px; border:0px solid; height:17px; padding:0px 3px; position:relative;"> 
+                    <input type="text" name="cari" style="width:100px; border:0px solid; height:17px; padding:0px 3px; position:relative;"> 
                 </td>
                 <td style="border-style:solid;border-color:#ff9900;border-width:1px;"> 
                     <input type="submit" value="" style="border-style: none; background: url(assets/searchbutton.png) no-repeat; width: 25px; height: 25px;">

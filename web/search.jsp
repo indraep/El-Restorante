@@ -12,17 +12,16 @@
 
     <%
         CategoryModel categoryModel = new CategoryModel();
-        String catId = request.getParameter("categoryId");
-        int categoryId = catId == null ? 1 : Integer.parseInt(catId);
+        String catId = request.getParameter("cari");
 
         String spage = request.getParameter("page");
         int npage = spage == null ? 1 : Integer.parseInt(spage);
 
-        ArrayList<Menu> menu = categoryModel.getMenuByCategory(categoryId, npage);
+        ArrayList<Menu> menu = categoryModel.getMenuByName(catId, npage);
         String link = "";
     %>
 
-    <h3>Daftar Menu <%= categoryModel.getCategoryName(categoryId)%> </h3>
+    <h3>Daftar Menu <%= catId %> </h3>
     <%
         out.print("<table>");
         for (int i = 0; i < 3; ++i) {
@@ -44,14 +43,14 @@
             <li>
                 <%
                     if (npage > 1) {
-                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage - 1) + "'><img src = 'assets/left.png' id='logbutton' width='20px' height='20px'/></a>");
+                        out.print("<a href='searchindex.jsp?cari=" + catId + "&page=" + (npage - 1) + "'><img src = 'assets/left.png' id='logbutton' width='20px' height='20px'/></a>");
                     }
                 %>
             </li>
             <li>
                 <%
                     if (menu.size() > 9) {
-                        out.print("<a href='index.jsp?categoryId=" + categoryId + "&page=" + (npage + 1) + "'><img src = 'assets/right.png' id='logbutton' width='20px' height='20px'/></a>");
+                        out.print("<a href='searchindex.jsp?cari=" + catId + "&page=" + (npage + 1) + "'><img src = 'assets/right.png' id='logbutton' width='20px' height='20px'/></a>");
                     }
                 %>
             </li>
