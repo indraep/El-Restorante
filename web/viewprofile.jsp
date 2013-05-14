@@ -41,23 +41,19 @@
                                 </tr>
                                 <tr>
                                     <td>Usia:</td>
-                                    <td colspan="2">Usia</td>
+                                    <td colspan="2"><%= user.getUsia() %></td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"> Birth Date</td>
+                                    <td colspan="2"><%= user.getBirthDate() %></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
                                     <td colspan="2"><%= user.getAlamat()%></td>
                                 </tr>
                                 <tr>
-                                    <td>Kota:</td>
-                                    <td colspan="2">kota</td>
-                                </tr>
-                                <tr>
                                     <td>Bio:</td>
-                                    <td colspan="2">Bio</td>
+                                    <td colspan="2"><%= user.getBio() %></td>
                                 </tr>
                             <br />
 
@@ -90,12 +86,8 @@
                                 <td colspan="2"><%= user.getUsername() %></td>
                             </tr>
                             <tr>
-                                <td>Password:</td>
-                                <td colspan="2">Password</td>
-                            </tr>
-                            <tr>
                                 <td></td>
-                                <td><a href="edit.jsp?edit=true"><img src ="assets/edit.png" id ="logbutton"/></a></td>
+                                <td><a href="edit.jsp"><img src ="assets/edit.png" id ="logbutton"/></a></td>
                             </tr>
                             <br />
                         </table>

@@ -32,6 +32,11 @@ function printCart() {
 		
 		isi += "<p class='category'>" + getName(temp[i]) + "</p> <a style=\"margin-left: 7px;\" href=javascript:removeFromCart(" + getId(temp[i]) + ")>remove</a>";
 	}
+        
+        if (isi.length > 0) {
+            isi += "<br /><img src='#' alt='Check out'/>";
+        }
+        
 	document.getElementById("cart").innerHTML = isi;
 }
 

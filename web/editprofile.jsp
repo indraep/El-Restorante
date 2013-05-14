@@ -4,56 +4,105 @@
     Author     : cLienT
 --%>
 
+<%@page import="Bean.User"%>
+<%@page import="ModelClass.UserModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div id="editprofile">
     <h3>Edit Profile</h3>
 
     <%
-        
+        String pencet = request.getParameter("hi");
+        if (pencet != null) {
+            String nama = request.getParameter("name");
+            String birthdate = request.getParameter("birthdate");
+            String email = request.getParameter("email");
+            String address = request.getParameter("address");
+            String bio = request.getParameter("bio");
+            String username = request.getParameter("hidd");
+            String password = request.getParameter("password");
+            String confirmpass = request.getParameter("confirmpass");
+
+            UserModel model = new UserModel();
+
+            if ((confirmpass == null || confirmpass.length() == 0) && (password != null && password.length() > 0)) {
+                out.println("<script>alert('Password tidak sesuai!');</script>");
+                response.sendRedirect("edit.jsp");
+            } else if ((password == null || password.length() == 0) && (confirmpass != null && confirmpass.length() > 0)) {
+                out.println("<script>alert('Password tidak sesuai!');</script>");
+                response.sendRedirect("edit.jsp");
+            } else {
+
+                boolean udah = false;
+                if ((password == null || password.length() == 0)) {
+                    udah = model.update(nama, username, password, email, address, birthdate, bio, 0);
+                } else {
+                    if (password == confirmpass)
+                        udah = model.update(nama, username, password, email, address, birthdate, bio, 1);
+                    
+                }
+
+                if (!udah) {
+                    out.println("<script>alert('Password tidak sesuai!');</script>");
+                    response.sendRedirect("edit.jsp");
+                }
+                else
+                    response.sendRedirect("view.jsp");
+            }
+        }
+
+        Cookie[] cookies = request.getCookies();
+        String name = null;
+        if (cookies != null && cookies.length != 0) {
+            for (int i = 0; i < cookies.length; i++) {
+                Cookie cookie = cookies[i];
+                if (cookie.getName().equals("username")) {
+                    name = cookies[i].getValue();
+                }
+            }
+        }
+
+        UserModel usermodel = new UserModel();
+        User a = usermodel.getUserByUsername(name);
     %>
     <div id="userdata">
-        <table>
-            <tr>
-                <td>  
-                    <div id="photo">
-                        <img src="assets/photo.png"/><br />
-                        Change Profile Picture
-                        <br/>
-                        <form action="UploadServlet" method="post"
-                              enctype="multipart/form-data">
-                            <input type="file" name="file" size="15" />
-                            <br />
-                            <a href="#"><img src="assets/upload.png"/></a>
-                        </form>
-                    </div>
-                </td>
-                <td>
-                    <div id= "userdata">
-                        <table>
-                            <tr>
-                                <td colspan="2"><strong>Biodata</strong></td>
-                            </tr>
-                            <form action="editprofile.jsp" method="post">
+        <form action="editprofile.jsp" method="post">
+            <table>
+                <tr>
+                    <td>  
+                        <div id="photo">
+                            <img src="assets/photo.png"/><br />
+                            Change Profile Picture
+                            <br/>
+                            <form action="UploadServlet" method="post"
+                                  enctype="multipart/form-data">
+                                <input type="file" name="file" size="15" />
+                                <br />
+                                <a href="#"><img src="assets/upload.png"/></a>
+                            </form>
+                        </div>
+                    </td>
+                    <td>
+                        <div id= "userdata">
+                            <table>
+                                <tr>
+                                    <td colspan="2"><strong>Biodata</strong></td>
+                                </tr>
                                 <tr>
                                     <td width="250px">Nama:</td>
-                                    <td colspan="2"><input type="text" name="name"></td>
+                                    <td colspan="2"><input type="text" name="name" value ="<% out.println(a.getNama());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Usia:</td>
-                                    <td colspan="2"><input type="number" name="age"></td>
+                                    <td colspan="2"><input type="number" name="age" value ="<% out.println(a.getUsia());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Lahir:</td>
-                                    <td colspan="2"><input type="date" name="birthdate"></td>
+                                    <td colspan="2"><input type="date" name="birthdate" value ="<% out.println(a.getBirthDate());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat:</td>
-                                    <td colspan="2"><input type="text" name="address"></td>
-                                </tr>
-                                <tr>
-                                    <td>Kota:</td>
-                                    <td colspan="2"><input type="text" name="city"></td>
+                                    <td colspan="2"><input type="text" name="address" value ="<% out.println(a.getNama());%>"></td>
                                 </tr>
                                 <tr>
                                     <td>Hobi:</td>
@@ -61,12 +110,10 @@
                                 </tr>
                                 <tr>
                                     <td>Bio:</td>
-                                    <td colspan="2"><textarea rows="4" cols="20" name="bio"></textarea></td>
+                                    <td colspan="2"><input type="text" name="bio" value ="<% out.println(a.getBio());%>"></textarea></td>
                                 </tr>
-                            </form>
-                            <br />
+                                <br />
 
-                            <form action="editprofile.jsp">
                                 <tr>
                                     <td colspan="2"><strong>Favorit</strong></td>
                                 </tr>
@@ -82,38 +129,44 @@
                                     <td>Lainnya:</td>
                                     <td colspan="2"><input type="text" name="fav_other"></td>
                                 </tr>
-                            </form>
-                            <br />
+                                </form>
+                                <br />
 
-                            <tr>
-                                <td colspan="2"><strong>Akun</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td colspan="2"><input type="email" name="email"></td>
-                            </tr>
-                            <tr>
-                                <td>Username:</td>
-                                <td colspan="2"><input type="text" name="username"></td>
-                            </tr>
-                            <tr>
-                                <td>New Password:</td>
-                                <td colspan="2"><input type="password" name="password"></td>
-                            </tr>
-                            <tr>
-                                <td>Confirm New Password:</td>
-                                <td colspan="2"><input type="password" name ="confirmpass"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><a href="#"><img src="assets/savechanges.png" id ="logbutton"/></a></td>
-                                <td><a href="#"><img src="assets/cancel.png" id ="logbutton"/></a></td>
-                            </tr>
-                            <br />
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                                <tr>
+                                    <td colspan="2"><strong>Akun</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td colspan="2"><input type="email" name="email" value ="<% out.println(a.getEmail());%>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Username:</td>
+                                    <td colspan="2"><input type="text" name="username" value ="<%= a.getUsername()%>" disabled="true"/>
+                                        <input type="hidden" name="hidd" value="<%= a.getUsername()%>"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>New Password:</td>
+                                    <td colspan="2"><input type="password" name="password"></td>
+                                </tr>
+                                <tr>
+                                    <td>Confirm New Password:</td>
+                                    <td colspan="2"><input type="password" name ="confirmpass"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" name="ganti" value="Save Changes"/>
+                                        <input type="hidden" name="hi" value="hii"/>
+                                        <a href="#"><img src="assets/savechanges.png" id ="logbutton"/></a></td>
+                                    <td><a href="view.jsp"><img src="assets/cancel.png" id ="logbutton"/></a></td>
+                                </tr>
+                                <br />
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
