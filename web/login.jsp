@@ -13,15 +13,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-<<<<<<< HEAD
     UserModel userModel = new UserModel();
     UserModel userModel2 = new UserModel();
     if (request.getParameter("register") != null) {
-=======
     String reg = request.getParameter("register");
     
     if (reg == null) {
-        UserModel userModel = new UserModel();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -35,8 +32,6 @@
 
         }
     } else {
-        UserModel userModel = new UserModel();
->>>>>>> d0b304bc9e0ef3443386f32540a2c9935917895f
         String nama = request.getParameter("namereg");
         String username = request.getParameter("usernamereg");
         String password = request.getParameter("passwordreg");
@@ -78,20 +73,6 @@
             }
         }
     }
-    else {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        if (username != null && password != null && username.length() > 0 && password.length() > 0) {
-            User user = userModel.login(username, password);
-            if (user != null) {
-                Cookie cookie = new Cookie("username", username);
-                response.addCookie(cookie);
-                response.sendRedirect("index.jsp");
-            }
-        }
-    }
-
 %>
 <html>
     <head>
