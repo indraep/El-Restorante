@@ -73,10 +73,17 @@
         var username = $.cookie("username");
         var totalBiaya = document.getElementById("totalBiaya").innerHTML;
         var addition = document.getElementById("addition").value;
-        alert("ada juga = " + addition);
         var pesanan = "";
         var temp = getOrder();
         var c = temp.split("-");
+        
+        var username_paybro = document.getElementById("username_paybro").value;
+        var password_paybro = document.getElementById("password_paybro").value;
+        
+        if (username_paybro.length == 0 || password_paybro.length == 0) {
+            alert("Harap lengkapi username dan password untuk melakukan transaksi!");
+            return;
+        }
         
         for (var i = 0; i < c.length; i++) {
             if (pesanan.length > 0) pesanan += "-";
@@ -89,32 +96,30 @@
         
         $.ajax({
             type:       "post",
-            url:        "ajaxQuery/buatPesanan.jsp",
+            url:        "ajaxQuery/buatPesananPaybro.jsp",
             data:       {
                 "username": username,
                 "pesanan": pesanan,
                 "total_biaya": totalBiaya,
-                "addition": addition
+                "addition": addition,
+                "username_paybro": username_paybro,
+                "password_paybro": password_paybro
             },
             success:    function(msg) {
                 msg = msg.trim();
-                var confirmationCode = window.prompt("Nomor pesanan anda adalah:\n\n" + msg + "\n\nSilahkan lakukan pembayaran dengan PayBro dan masukkan kode verifikasi!");
+                //var confirmationCode = window.prompt("Nomor pesanan anda adalah:\n\n" + msg + "\n\nSilahkan lakukan pembayaran dengan PayBro dan masukkan kode verifikasi!");
                 
                 // cancel or salah
-                if (confirmationCode == null || false) {
-                    
+                if (msg == null || msg == "") {
+                    alert("Transaksi gagal, harap periksa account PayBro anda. Terima Kasih.");
                 }
                 // correct confirmation code
                 else {
-                    
+                    alert("Transaksi anda berhasil, pesanan anda akan segera kami proses. Terima Kasih.");
                 }
             }
         });
         return false;
-    }
-    
-    function tes() {
-    alert("ada");
     }
 </script>
 
@@ -128,6 +133,13 @@
     <br />
     <strong>addition</strong> <br/>
     <textarea id="addition" type="text" rows="5" cols="50" style="resize: none">Masukkan tambahan terhadap pesanan anda (misal: 'Nasi gorengnya tidak pedes')</textarea>
+    <br/>
+    <br/>
+    Bayar dengan <strong>PayBro</strong><br />
+    <strong>username</strong><br />
+    <input type="text" id="username_paybro" /><br />
+    <strong>password</strong><br />
+    <input type="password" id="password_paybro" /><br />
     <br/>
     <br/>
     <a href="javascript:order()" ><img alt="Order" src="assets/order.png" /></a>
