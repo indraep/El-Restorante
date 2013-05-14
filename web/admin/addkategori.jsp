@@ -27,7 +27,8 @@
 
 <div id ="daftar">
     <h3>Tambahkan kategori</h3>
-
+    <br/>
+    <br/>
     <form action="addkategori.jsp" method="post">
         <table>
             <tr>
@@ -37,10 +38,10 @@
            
             <tr>
                 <td></td>
-                <td><input type="image" name="tambahKategori" value="add" src="../assets/savechanges.png" id ="logbutton" />
+                <td style="padding-top: 20px"><input type="image" name="tambahKategori" value="add" src="../assets/savechanges.png" id ="logbutton" />
                     <input type="hidden" name="hi" value="hii"/>
                 </td>
-                <td><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
+                <td style="padding-top: 20px"><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
                             </tr>
 
                             </table>

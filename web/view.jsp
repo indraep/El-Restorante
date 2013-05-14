@@ -31,7 +31,7 @@
                 </td>
                 <td>
                    
-                        <jsp:include page = 'viewprofile.jsp' flush = 'true' />
+                    <jsp:include page = 'viewprofile.jsp' flush = 'true' />
                  
                 </td>
                 <td width="170px">

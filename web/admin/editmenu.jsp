@@ -34,8 +34,9 @@
 %>
 
 <div id ="daftar">
-    <h3>Tambahkan menu</h3>
-
+    <h3>Ubah menu</h3>
+    <br/>
+    <br/>
     <form action="editmenu.jsp" method="post">
         <table>
             <tr>
@@ -73,11 +74,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="image" name="editMenu" value="edit" src="../assets/savechanges.png" id ="logbutton" />
+                <td style="padding-top: 20px"><input type="image" name="editMenu" value="edit" src="../assets/savechanges.png" id ="logbutton" />
                     <input type="hidden" name="id" value="<%= idMenu%>"/>
                     <input type="hidden" name="idx" value="<%= idx%>"/>
                 </td>
-                <td><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
+                <td style="padding-top: 20px"><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
             </tr>
 
         </table>

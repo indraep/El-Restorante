@@ -29,7 +29,7 @@
                         <img src="../assets/photo.png"/><br />
                     </div>
                 </td>
-                <td>
+                <td style="padding-left: 30px">
                     <div id= "userdata">
                         <table>
                             <tr>
@@ -87,7 +87,7 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><a href="edit.jsp"><img src ="../assets/edit.png" id ="logbutton"/></a></td>
+                                <td style="padding-top: 20px"><a href="edit.jsp"><img src ="../assets/edit.png" id ="logbutton"/></a></td>
                             </tr>
                             <br />
                         </table>

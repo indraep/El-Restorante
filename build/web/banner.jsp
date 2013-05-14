@@ -31,7 +31,7 @@
         <nav>
             <ul class="dropdown_user">
                 <li class="drop">
-                    <a class="drop_anchor" href="#" >Halo <%= name == null? "" : name %><img style="margin-left: 10px" src = "assets/menu.png" /></a>
+                    <a class="drop_anchor" href="#" style="color: white" >Halo <%= name == null? "" : name %><img style="margin-left: 10px" src = "assets/menu.png" /></a>
                     <div class="dropdownContain">
                         <div class="dropOut">
                             <div class="triangle"></div>

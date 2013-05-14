@@ -16,23 +16,11 @@
                 <br/>
                 <br/>
             </td>
-            <td>
-                <h3>Urutkan berdasar:</h3></td>
+            <td><h3>Urutkan berdasar:</h3></td>
         </tr>
         <tr>
             <td width ="600px">
                 <%
-                    Cookie[] cookies = request.getCookies();
-                    String name = null;
-                    if (cookies != null && cookies.length != 0) {
-                        for (int i = 0; i < cookies.length; i++) {
-                            Cookie cookie = cookies[i];
-                            if (cookie.getName().equals("username")) {
-                                name = cookies[i].getValue();
-                            }
-                        }
-                    }
-
                     String param = request.getParameter("sorting");
                     if (param == null) param = "1";
                             
@@ -46,11 +34,15 @@
                         order = "date";
                         cetak = "Tanggal";
                     }
+                    else if (param.equals("4")) {
+                        order = "username";
+                        cetak = "Username";
+                    }
                     else {
                         order = "id";
                         cetak = "ID";
                     }
-                    
+
                     out.print("<h3>Diurutkan berdasarkan " + cetak + "</h3>");
                     out.print("<br/>");
                     out.print("<table border='1'>");
@@ -59,10 +51,11 @@
                     out.print("<td>ID Order</td>");
                     out.print("<td>Total Harga</td>");
                     out.print("<td>Tanggal Pemesanan</td>");
+                    out.print("<td>Username</td>");
                     out.print("</tr>");
 
                     PesananModel pes = new PesananModel();
-                    ArrayList<Pesanan> pesanan = pes.history(name, order);
+                    ArrayList<Pesanan> pesanan = pes.cari(order);
 
                     int N = pesanan.size();
                     if (N > 0) {
@@ -72,6 +65,7 @@
                             out.print("<td>" + pesanan.get(i).getId() + "</td>");
                             out.print("<td>" + pesanan.get(i).getTotalBiaya() + "</td>");
                             out.print("<td>" + pesanan.get(i).getDate() + "</td>");
+                            out.print("<td>" + pesanan.get(i).getUsername() + "</td>");
                             out.print("</tr>");
                         }
                     }
@@ -85,10 +79,11 @@
                         <option value="1">ID Order</option>
                         <option value="2">Total Harga</option>
                         <option value="3">Tanggal Pemesanan</option>
+                        <option value="4">Username</option>
                     </select>
                     <br/>
                     <br/>
-                    <input type="image" name="cari" value="Cari" src="assets/savechanges.png" id ="logbutton" />
+                    <input type="image" name="cari" value="Cari" src="../assets/savechanges.png" id ="logbutton" />
                 </form>
             </td>
         </tr>

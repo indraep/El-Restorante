@@ -95,24 +95,28 @@ root {
 
 #daftar {
     height: 800px;
+    background-image: url(../assets/bg_home.png);
     margin: 0 auto;
     margin-left: 10px;
 }
 
 #editprofile {
     height: 800px;
+    background-image: url(../assets/bg_home.png);
     margin: 0 auto;
     margin-left: 10px;
 }
 
 #checkout {
     height: 800px;
+    background-image: url(../assets/bg_home.png);
     margin: 0 auto;
     margin-left: 10px;
 }
 
 #his {
     height: 800px;
+    background-image: url(../assets/bg_home.png);
     margin: 0 auto;
     margin-left: 10px;
 }
@@ -176,6 +180,7 @@ root {
 
 #photo {
     width : 200px;height : 200px;background-color : #FFCCCC; float : left;
+    margin-top: -90px;
 }
 
 #userdata {

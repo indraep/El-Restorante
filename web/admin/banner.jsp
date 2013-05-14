@@ -31,14 +31,14 @@
     <nav>
         <ul class="dropdown_user">
             <li class="drop">
-                <a class="drop_anchor" href="#" >Halo <%= name == null ? "" : name%><img style="margin-left: 20px" src = "../assets/menu.png" /></a>
+                <a class="drop_anchor" href="#" style="color: white">Halo <%= name == null ? "" : name%><img style="margin-left: 20px" src = "../assets/menu.png" /></a>
                 <div class="dropdownContain">
                     <div class="dropOut">
                         <div class="triangle"></div>
                         <ul class="dropdown_user">
 
                             <% if (name != null) {%>
-                            <li><a class="login_anchor" href ="LogoutServletAd">Logout</a></li>
+                            <li><a class="login_anchor" href ="logout.jsp">Logout</a></li>
                                 <% } else {%>
                             <li><a class="login_anchor" href ="login.jsp">Login</a></li>
                                 <% }%>

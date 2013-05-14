@@ -63,7 +63,7 @@
             isi += "</tr>";
         }
         isi += "<tr>";
-            isi += "<td colspan='4'>Total Harga Pesanan</td>";
+            isi += "<td colspan='4'><strong>Total Harga Pesanan</strong></td>";
             isi += "<td>Rp. <strong id='totalBiaya'>" + total + "</strong></td>";
         isi += "</tr>";
         detailPesanan.innerHTML = isi;
@@ -109,13 +109,21 @@
         });
         return false;
     }
+    
+    function tes() {
+    alert("ada");
+    }
 </script>
 
 <div id="checkout">
     <h3>Checkout</h3>
+    <br/>
+    <br/>
     <table id="detail_pesanan" border="1">
         <% out.print("<script>isiDetailPesanan();</script>"); %>
     </table>
+    <br/>
+    <br/>
     <a href="javascript:order()" ><img alt="Order" src="assets/order.png" /></a>
     <a href="index.jsp" ><img alt="Cancel" src="assets/cancel.png" /></a>
 </div>

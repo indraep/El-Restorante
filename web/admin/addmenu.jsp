@@ -35,8 +35,14 @@
 
 <div id ="daftar">
     <h3>Tambahkan menu</h3>
+<<<<<<< HEAD
 
     <form action="utilities/upload_menu_image.jsp" method="post" enctype="multipart/form-data">
+=======
+    <br/>
+    <br/>
+    <form action="addmenu.jsp" method="post">
+>>>>>>> e1148aee80af5fc9c5e6297a8cad1f55dbd82bcb
         <table>
             <tr>
                 <td width="250px">Nama:</td>
@@ -70,11 +76,19 @@
             </tr>
             <tr>
                 <td></td>
+<<<<<<< HEAD
                 <td>
                     <input type="image" name="tambahMenu" value="add" src="../assets/savechanges.png" id ="logbutton" />
                 </td>
                 <td><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
             </tr>
+=======
+                <td style="padding-top: 20px"><input type="image" name="tambahMenu" value="add" src="../assets/savechanges.png" id ="logbutton" />
+                    <input type="hidden" name="hi" value="hii"/>
+                </td>
+                <td style="padding-top: 20px"><a href="index.jsp"><img src="../assets/cancel.png" id ="logbutton"/></td>
+                            </tr>
+>>>>>>> e1148aee80af5fc9c5e6297a8cad1f55dbd82bcb
 
         </table>
     </form>
