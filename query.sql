@@ -6,10 +6,14 @@ create table user (
 	password varchar(50) not null,
 	alamat text not null,
 	email varchar(50) not null,
-	birth_date date,
-	bio text,
+	birth_date date not null,
+	bio text not null,
+	role int not null,
 	image longblob
 );
+
+insert into user(nama, username, password, alamat, email, birth_date, bio, role) 
+	values('admin', 'admin', md5('admin'), 'Depok', 'admin@elrestorante.com', '1992-12-07', 'Hidup Segan Mati Tak Mau', 1)
 
 create table message (
 	id int auto_increment primary key,

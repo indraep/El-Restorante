@@ -19,7 +19,6 @@
     }
     
     if (usernames != null) {
-        out.print("<script>alert('masuk');</script>");
         response.sendRedirect("index.jsp");
     }
     
@@ -32,7 +31,7 @@
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username != null && password != null && username.length() > 0 && password.length() > 0) {
-            User user = userModel.login(username, password);
+            User user = userModel.login(username, password, 0);
             if (user != null) {
                 Cookie cookie = new Cookie("username", username);
                 response.addCookie(cookie);
