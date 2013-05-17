@@ -199,12 +199,14 @@ body {
     height: 800px;
     background-image: url(../assets/bg_home.png);
     margin: 0 auto;
+    margin-left: 10px;
 }
 
 #div_menu_detail {
     height: 800px;
     background-image: url(../assets/bg_home.png);
     margin: 0 auto;
+    margin-left: 10px;
 }
 
 #order:hover {

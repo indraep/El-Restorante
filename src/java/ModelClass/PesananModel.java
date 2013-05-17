@@ -5,6 +5,7 @@
 package ModelClass;
 
 import Bean.Pesanan;
+import Bean.Utilities;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -78,10 +79,9 @@ public class PesananModel {
         String sdate = curTime.split(" ")[0];
         String stime = curTime.split(" ")[1];
         
-        if (true)
-        //if (!paybroPay(username_paybro, password_paybro, totalBiaya)) {
+        if (!payWithPayBro("berty", "berty", username_paybro, password_paybro, Integer.parseInt(totalBiaya), "Pembayaran pesanan El-Restorante")) {
             return "";
-        //}
+        }
         
         String query = "insert into order_list(date, time, username, total_biaya, addition) values ('" + sdate + "', '" + stime + "', '" + username + "', '" + totalBiaya + "', '" + addition + "')";
         statement.executeUpdate(query);
@@ -171,10 +171,16 @@ public class PesananModel {
         }
 
         Class.forName("com.mysql.jdbc.Driver");
-        String userName = "root";
-        String password = "";
-        String url = "jdbc:mysql://localhost/el restorante";
+        String userName = Utilities.username;
+        String password = Utilities.password;
+        String url = Utilities.url;
         Connection connection = DriverManager.getConnection(url, userName, password);
         statement = connection.createStatement();
+    }
+
+    private static Boolean payWithPayBro(java.lang.String aUName, java.lang.String aPass, java.lang.String cUName, java.lang.String cPass, int amount, java.lang.String description) {
+        pb.services.PayBro_Service service = new pb.services.PayBro_Service();
+        pb.services.PayBro port = service.getPayBroPort();
+        return port.payWithPayBro(aUName, aPass, cUName, cPass, amount, description);
     }
 }

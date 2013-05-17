@@ -5,6 +5,7 @@
 package ModelClass;
 
 import Bean.User;
+import Bean.Utilities;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,6 +21,24 @@ import org.apache.catalina.connector.Request;
 public class UserModel {
 
     private Statement statement;
+    
+    public void setImageName(String imageName, String username) throws Exception {
+        connectToDB();
+        
+        String query = "update user set image='" + imageName + "' where username = '" + username + "'";
+        statement.executeUpdate(query);
+    }
+    
+    public String getImageName(String username) throws Exception {
+        connectToDB();
+        
+        String query = "select image from user where username = '" + username + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+            return resultSet.getObject(1).toString();
+        }
+        return "";
+    }
 
     public User login(String uname, String pass, int role) throws Exception {
         connectToDB();
@@ -102,9 +121,9 @@ public class UserModel {
         }
 
         Class.forName("com.mysql.jdbc.Driver");
-        String userName = "root";
-        String password = "";
-        String url = "jdbc:mysql://localhost/el restorante";
+        String userName = Utilities.username;
+        String password = Utilities.password;
+        String url = Utilities.url;
         Connection connection = DriverManager.getConnection(url, userName, password);
         statement = connection.createStatement();
     }

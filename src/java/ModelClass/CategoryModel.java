@@ -6,6 +6,7 @@ package ModelClass;
 
 import Bean.Category;
 import Bean.Menu;
+import Bean.Utilities;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -129,9 +130,9 @@ public class CategoryModel {
         }
 
         Class.forName("com.mysql.jdbc.Driver");
-        String userName = "root";
-        String password = "";
-        String url = "jdbc:mysql://localhost/el restorante";
+        String userName = Utilities.username;
+        String password = Utilities.password;
+        String url = Utilities.url;
         Connection connection = DriverManager.getConnection(url, userName, password);
         statement = connection.createStatement();
     }

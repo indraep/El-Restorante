@@ -15,20 +15,6 @@
 <%
     int idMenu = Integer.parseInt(request.getParameter("id"));
     int idx = Integer.parseInt(request.getParameter("idx"));
-    String kategori = request.getParameter("kategori");
-    String nama = request.getParameter("food_name");
-    String harga = request.getParameter("food_price");
-    String deskripsi = request.getParameter("food_description");
-
-    if (kategori != null && kategori.length() > 0 && nama != null && nama.length() > 0 && harga != null && harga.length() > 0 && deskripsi != null && deskripsi.length() > 0) {
-        MenuModel menu = new MenuModel();
-        menu.updateMenu(kategori, nama, harga, deskripsi, idMenu);
-        response.sendRedirect("index.jsp");
-    }
-    else {
-        response.sendRedirect("vieweditmenu.jsp?id=" + idMenu + "&idx=" + idx);
-    }
-
     MenuModel model = new MenuModel();
     Menu menu = model.getMenuById(idMenu);
 %>
@@ -37,7 +23,8 @@
     <h3>Ubah menu</h3>
     <br/>
     <br/>
-    <form action="editmenu.jsp" method="post">
+    <form action="../editMenuImage" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="oldId" value="<%= idMenu %>" />
         <table>
             <tr>
                 <td width="250px">Nama:</td>
@@ -70,7 +57,7 @@
             </tr>
             <tr>
                 <td>Gambar:</td>
-                <td colspan="2"><input type="file" name ="food_img"></td>
+                <td colspan="2"><input type="file" name ="file"></td>
             </tr>
             <tr>
                 <td></td>

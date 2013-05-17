@@ -5,6 +5,7 @@
 package ModelClass;
 
 import Bean.Menu;
+import Bean.Utilities;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,6 +18,24 @@ import java.sql.Statement;
  */
 public class MenuModel {
     private Statement statement;
+    
+    public void setImageName(String imageName, String id) throws Exception {
+        connectToDB();
+        
+        String query = "update menu set image='" + imageName + "' where id = '" + id + "'";
+        statement.executeUpdate(query);
+    }
+    
+    public String getImageName(String id) throws Exception {
+        connectToDB();
+        
+        String query = "select image from menu where id = '" + id + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+            return resultSet.getObject(1).toString();
+        }
+        return "";
+    }
     
     public Menu getMenuById(int idMenu) throws Exception {
         connectToDB();
@@ -37,9 +56,16 @@ public class MenuModel {
         return ret;
     }
     
+    public boolean addMenu(String kategori, String nama, String harga, String deskripsi, String image) throws Exception {
+        connectToDB();
+        String query = "INSERT INTO `menu`(`category_id`, `name`, `description`, `price`, `image`) VALUES ('" + kategori + "','" + nama + "','" + deskripsi + "','" + harga + "', '" + image + "')";
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
     public boolean addMenu(String kategori, String nama, String harga, String deskripsi) throws Exception {
         connectToDB();
-        String query = "INSERT INTO `menu`(`category_id`, `name`, `description`, `price`) VALUES ('" + kategori + "','" + nama + "','" + deskripsi + "'," + harga + ")";
+        String query = "INSERT INTO `menu`(`category_id`, `name`, `description`, `price`) VALUES ('" + kategori + "','" + nama + "','" + deskripsi + "','" + harga + "')";
         int ans = statement.executeUpdate(query);
         return ans > 0;
     }
@@ -48,6 +74,14 @@ public class MenuModel {
         connectToDB();
         
         String query = "UPDATE `menu` SET `category_id`='" + kategori + "',`name`= '" + nama + "',`description`='" + deskripsi + "',`price`=" + harga + " WHERE id = " + id;
+        int ans = statement.executeUpdate(query);
+        return ans > 0;
+    }
+    
+    public boolean updateMenu(String kategori, String nama, String harga, String deskripsi, int id, String image) throws Exception {
+        connectToDB();
+        
+        String query = "UPDATE `menu` SET `category_id`='" + kategori + "',`name`= '" + nama + "',`description`='" + deskripsi + "',`price`=" + harga + ", image='" + image + "' WHERE id = " + id;
         int ans = statement.executeUpdate(query);
         return ans > 0;
     }
@@ -65,9 +99,9 @@ public class MenuModel {
         }
 
         Class.forName("com.mysql.jdbc.Driver");
-        String userName = "root";
-        String password = "";
-        String url = "jdbc:mysql://localhost/el restorante";
+        String userName = Utilities.username;
+        String password = Utilities.password;
+        String url = Utilities.url;
         Connection connection = DriverManager.getConnection(url, userName, password);
         statement = connection.createStatement();
     }

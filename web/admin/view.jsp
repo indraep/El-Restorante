@@ -45,13 +45,7 @@
                     <jsp:include page = 'sidebar.jsp' flush = 'true' />
                 </td>
                 <td>
-<<<<<<< HEAD
                     <jsp:include page = 'viewprofile.jsp' flush = 'true' />
-=======
-
-                    <jsp:include page = 'viewprofile.jsp' flush = 'true' />
-
->>>>>>> 0641280e6b7f41fa2efae42da6f0f5cb9294b4a1
                 </td>
                 <td width="150px">
                     <jsp:include page = 'right_sidebar.jsp' flush = 'true' />

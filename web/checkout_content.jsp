@@ -116,6 +116,8 @@
                 // correct confirmation code
                 else {
                     alert("Transaksi anda berhasil, pesanan anda akan segera kami proses. Terima Kasih.");
+                    clearCart();
+                    window.location.replace("index.jsp");
                 }
             }
         });
@@ -132,7 +134,7 @@
     </table>
     <br />
     <strong>addition</strong> <br/>
-    <textarea id="addition" type="text" rows="5" cols="50" style="resize: none">Masukkan tambahan terhadap pesanan anda (misal: 'Nasi gorengnya tidak pedes')</textarea>
+    <textarea id="addition" type="text" rows="5" cols="50" style="resize: none">Masukkan tambahan terhadap pesanan anda (misal: Nasi gorengnya tidak pedes)</textarea>
     <br/>
     <br/>
     Bayar dengan <strong>PayBro</strong><br />

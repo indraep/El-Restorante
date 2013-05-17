@@ -26,7 +26,7 @@
             <tr>
                 <td>  
                     <div id="photo">
-                        <% String src = "admin/utilities/retrieve_user_image.jsp?username=" + user.getUsername(); %>
+                        <% String src = "uploaded-image/user/" + userModel.getImageName(user.getUsername()); %>
                         <img src="<%= src %>" width="203px" height="226px" alt="photo"/><br />
                     </div>
                 </td>

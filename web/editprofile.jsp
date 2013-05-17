@@ -71,16 +71,15 @@
             <tr>
                 <td>  
                     <div id="photo">
-                        <% String src = "admin/utilities/retrieve_user_image.jsp?username=" + a.getUsername(); %>
+                        <% String src = "uploaded-image/user/" + usermodel.getImageName(a.getUsername()); %>
                         <img src="<%= src %>" width="203px" height="226px" alt="photo"/><br />
                         Change Profile Picture
                         <br/>
-                        <form action="admin/utilities/upload_user_image.jsp" method="post"
-                              enctype="multipart/form-data">
+                        <form action="uploadUserImage" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="username" value="<%= a.getUsername()%>" />
                             <input type="file" name="file" size="15" />
                             <br />
-                            <input type="image" src="assets/upload.png"/>
+                            <input type="image" name="save" src="assets/upload.png"/>
                         </form>
                     </div>
                 </td>
