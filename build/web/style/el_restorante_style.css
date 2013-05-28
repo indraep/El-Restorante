@@ -586,3 +586,24 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 }
 
 .description input[type=checkbox]:checked~.description-text { opacity: 1 }
+
+
+.historylist {
+  text-align: center;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.historylist table {
+  width: 100%;
+}
+
+.historylist td, .historylist th {
+  padding: 10px;
+}
+
+.historylist th {
+  border-bottom: 3px solid #111111;
+  position: relative;
+}
